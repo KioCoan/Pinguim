@@ -10,6 +10,7 @@
 #import "EmJogo.h"
 #import "WSwebservice.h"
 
+
 @interface Ranking : SKScene
 
 @property NSThread* myThread;
@@ -25,5 +26,6 @@
 -(void)initWithScore:(float)score : (NSString*)nomeJogador;
 
 -(void)voltaJogo;
+
 
 @end

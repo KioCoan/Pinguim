@@ -13,9 +13,17 @@
 
 -(void)initWithScore:(float)score :(NSString *)nomeJogador{
     
+    //Botão menu
+    
+    SKSpriteNode *botaoMenu = [SKSpriteNode spriteNodeWithImageNamed:@"botaoMenu"];
+    botaoMenu.position = CGPointMake(self.frame.size.width/2,self.frame.size.height / 4);
+    botaoMenu.name = @"botaoMenuNode";//how the node is identified later
+    botaoMenu.zPosition = 1.0;
+
+    [self addChild:botaoMenu];
+    
+    //Resto
     self.ws = [[WSwebservice alloc]init];
-    
-    
     
     if ([nomeJogador isEqual: @""]) {
         nomeJogador = @"Anonymous Penguin";
@@ -90,6 +98,15 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
+    
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInNode:self];
+    SKNode *node = [self nodeAtPoint:location];
+    
+    //if fire button touched, bring the rain
+    if ([node.name isEqualToString:@"botaoMenuNode"]) {
+        [[ViewController sharedViewController]voltar];
+    }
     
     [self voltaJogo];
 }

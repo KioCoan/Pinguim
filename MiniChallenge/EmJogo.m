@@ -29,7 +29,7 @@
         
         NSURL* urlMusica = [[NSURL alloc]initFileURLWithPath:[[NSBundle mainBundle] pathForResource:@"bebold" ofType:@"mp3"]];
         self.musica = [[AVAudioPlayer alloc]initWithContentsOfURL:urlMusica error:nil];
-        [self.musica setVolume:0.1];
+        [self.musica setVolume:0.8];
         [[self musica]prepareToPlay];
         [self.musica setNumberOfLoops:-1];
         
@@ -248,15 +248,17 @@
 
 -(void)mudaScene{
     // Configure the view.
-    SKView * skView = (SKView *)self.view;
-    skView.showsFPS = NO;
-    skView.showsNodeCount = NO;
+    //SKView * skView = (SKView *)self.view;
+    //skView.showsFPS = NO;
+    //skView.showsNodeCount = NO;
+    [ViewController sharedViewController].skView.showsFPS = NO;
+    [ViewController sharedViewController].skView.showsNodeCount = NO;
     
     // Create and configure the scene.
     SKScene * scene = [[Ranking alloc]initWithSize:self.view.bounds.size : self.nomeJogador : self.score];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     // Present the scene.
-    [skView presentScene:scene];
+    [[ViewController sharedViewController].skView presentScene:scene];
 }
 
 @end

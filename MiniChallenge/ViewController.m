@@ -12,6 +12,20 @@
 
 @implementation ViewController
 
+
++(ViewController*)sharedViewController{
+    static ViewController *sharedViewController;
+    if (!sharedViewController)
+    {
+        sharedViewController = [[super allocWithZone:nil]init];
+    }
+    return sharedViewController;
+}
+
++ (id)allocWithZone:(struct _NSZone *)zone{
+    return [self sharedViewController];
+}
+
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
@@ -28,8 +42,7 @@
     
     NSURL* urlMusica = [[NSURL alloc]initFileURLWithPath:[[NSBundle mainBundle] pathForResource:@"tgif" ofType:@"mp3"]];
     _musicaInicio = [[AVAudioPlayer alloc]initWithContentsOfURL:urlMusica error:nil];
-    [_musicaInicio setVolume:0.1];
-    [_musicaInicio prepareToPlay];
+    [_musicaInicio setVolume:1.0];
     [_musicaInicio setNumberOfLoops:-1];
     [_musicaInicio prepareToPlay];
     [_musicaInicio play];
@@ -37,6 +50,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardDidHideNotification object:nil];
 
+    _rankingAberto = NO;
 }
 
 
@@ -91,12 +105,13 @@
 
 - (IBAction)iniciaGame:(UIButton *)sender {
     
-    [sender removeFromSuperview];
-    [self.imgFundo removeFromSuperview];
-    [self.txtNome removeFromSuperview];
-    [self.lblNome removeFromSuperview];
-    [self.btnRanking removeFromSuperview];
-    [_musicaInicio stop];
+   // [sender removeFromSuperview];
+   // [self.imgFundo removeFromSuperview];
+   // [self.txtNome removeFromSuperview];
+   // [self.lblNome removeFromSuperview];
+   // [self.btnRanking removeFromSuperview];
+   // [_musicaInicio stop];
+    [self desabilitaObjetos];
     
     self.skView = (SKView *)self.view;
     _skView.showsFPS = NO;
@@ -109,6 +124,33 @@
     // Present the scene.
     [_skView presentScene:scene];
 
+}
+- (void)voltar
+{
+    [self.skView presentScene:nil];
+    [self habilitarObjetos];
+    [self.musicaInicio prepareToPlay];
+    [self.musicaInicio play];
+}
+
+-(void)desabilitaObjetos
+{
+    [self.musicaInicio stop];
+    self.musicaInicio.currentTime = 0;
+    self.imgFundo.alpha = 0;
+    self.txtNome.alpha = 0;
+    self.lblNome.alpha = 0;
+    self.btnRanking.alpha = 0;
+    self.btnPlay.alpha = 0;
+}
+
+-(void)habilitarObjetos
+{
+    self.imgFundo.alpha = 1;
+    self.txtNome.alpha = 1;
+    self.lblNome.alpha = 1;
+    self.btnRanking.alpha = 1;
+    self.btnPlay.alpha = 1;
 }
 
 - (IBAction)abreRanking:(id)sender {
@@ -125,7 +167,10 @@
                                               otherButtonTitles:nil];
         [alert show];
     } else {
+        
         NSLog(@"There IS internet connection");
+        
+        if(!_rankingAberto){
         _listaRanking = [[WSwebservice alloc]getRanking];
         _viewRanking = [[UIView alloc]initWithFrame:CGRectMake(self.view.frame.size.width / 2, -310, self.view.frame.size.width - 40, self.view.frame.size.height - 10)];
         _viewRanking.backgroundColor = [UIColor blackColor];
@@ -152,7 +197,8 @@
             f.origin.y = 5.0f;
             self.viewRanking.frame = f;
         }];
-
+            _rankingAberto = YES;
+       }
     }
 }
 
@@ -180,6 +226,7 @@
 
 -(void)confirmaDeletar{
     [self.viewRanking removeFromSuperview];
+    _rankingAberto = NO;
     NSLog(@"Deletou tabela");
 }
 

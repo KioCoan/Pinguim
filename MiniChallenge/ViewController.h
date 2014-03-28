@@ -19,10 +19,13 @@
 - (IBAction)iniciaGame:(id)sender;
 - (IBAction)abreRanking:(id)sender;
 
+@property BOOL rankingAberto;
+
 @property (weak, nonatomic) IBOutlet UILabel *lblNome;
 @property (weak, nonatomic) IBOutlet UIImageView *imgFundo;
 @property (weak, nonatomic) IBOutlet UITextField *txtNome;
 @property (weak, nonatomic) IBOutlet UIButton *btnRanking;
+@property (weak, nonatomic) IBOutlet UIButton *btnPlay;
 @property AVAudioPlayer* musicaInicio;
 
 //ranking stuff
@@ -31,5 +34,13 @@
 @property UIView* viewRanking;
 
 -(void)deletaView;
+
++ (ViewController *)sharedViewController;
++ (id)allocWithZone:(struct _NSZone *)zone;
+
+- (void)voltar;
+- (void)habilitarObjetos;
+-(void)desabilitaObjetos;
+
 
 @end

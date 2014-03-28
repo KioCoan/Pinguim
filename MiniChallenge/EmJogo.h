@@ -11,6 +11,7 @@
 #import "Personagem.h"
 #import <AVFoundation/AVFoundation.h>
 #import "Ranking.h"
+#import "ViewController.h"
 
 @interface EmJogo : SKScene <SKPhysicsContactDelegate>
 
