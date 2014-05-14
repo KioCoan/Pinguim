@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		911E354619195C4200941842 /* launchR4.png in Resources */ = {isa = PBXBuildFile; fileRef = 911E354419195C4200941842 /* launchR4.png */; };
+		911E354719195C4200941842 /* launchx2.png in Resources */ = {isa = PBXBuildFile; fileRef = 911E354519195C4200941842 /* launchx2.png */; };
+		91256F7C18E6A9A300E0E1A6 /* icon58.png in Resources */ = {isa = PBXBuildFile; fileRef = 91256F7A18E6A9A300E0E1A6 /* icon58.png */; };
+		91256F7D18E6A9A300E0E1A6 /* icon80.png in Resources */ = {isa = PBXBuildFile; fileRef = 91256F7B18E6A9A300E0E1A6 /* icon80.png */; };
+		916A200119217D4D005D8766 /* replaybutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 916A200019217D4D005D8766 /* replaybutton.png */; };
 		91968A8218DBF9BF00076DD8 /* icon120.png in Resources */ = {isa = PBXBuildFile; fileRef = 91968A7F18DBF9BF00076DD8 /* icon120.png */; };
 		91968A8318DBF9BF00076DD8 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91968A8018DBF9BF00076DD8 /* icon@2x.png */; };
 		91968A8418DBF9BF00076DD8 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91968A8118DBF9BF00076DD8 /* icon.png */; };
@@ -15,6 +20,7 @@
 		91968A8B18DC1E0800076DD8 /* tgif.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91968A8A18DC1E0800076DD8 /* tgif.mp3 */; };
 		91968A8E18DC2A9200076DD8 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 91968A8D18DC2A9200076DD8 /* Reachability.m */; };
 		91B0861318E51CA50077C336 /* botaoMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B0861218E51CA50077C336 /* botaoMenu.png */; };
+		91B0861518E528870077C336 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91B0861418E528870077C336 /* GameKit.framework */; };
 		91D1F58518DA62F300F82100 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E69986DA18D234690026878B /* SpriteKit.framework */; };
 		91D1F58718DA635A00F82100 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D1F58618DA635A00F82100 /* AVFoundation.framework */; };
 		91D1F58918DA63B500F82100 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D1F58818DA63B500F82100 /* MediaPlayer.framework */; };
@@ -64,6 +70,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		911E354419195C4200941842 /* launchR4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchR4.png; sourceTree = "<group>"; };
+		911E354519195C4200941842 /* launchx2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchx2.png; sourceTree = "<group>"; };
+		91256F7A18E6A9A300E0E1A6 /* icon58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon58.png; sourceTree = "<group>"; };
+		91256F7B18E6A9A300E0E1A6 /* icon80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon80.png; sourceTree = "<group>"; };
+		916A200019217D4D005D8766 /* replaybutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = replaybutton.png; sourceTree = "<group>"; };
 		91968A7F18DBF9BF00076DD8 /* icon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon120.png; sourceTree = "<group>"; };
 		91968A8018DBF9BF00076DD8 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		91968A8118DBF9BF00076DD8 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
@@ -74,6 +85,7 @@
 		91968A8C18DC2A9200076DD8 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		91968A8D18DC2A9200076DD8 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		91B0861218E51CA50077C336 /* botaoMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = botaoMenu.png; sourceTree = "<group>"; };
+		91B0861418E528870077C336 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		91D1F58618DA635A00F82100 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		91D1F58818DA63B500F82100 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		91D1F58B18DA664600F82100 /* bebold.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bebold.mp3; sourceTree = "<group>"; };
@@ -94,15 +106,15 @@
 		D69E026D18DA2C6000A3B976 /* p1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p1.png; sourceTree = "<group>"; };
 		D69E027218DA2CA000A3B976 /* rect2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rect2.png; sourceTree = "<group>"; };
 		D69E027418DA31C400A3B976 /* rect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rect.png; sourceTree = "<group>"; };
-		E69986D118D234690026878B /* MiniChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E69986D118D234690026878B /* Pepes Adventure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pepes Adventure.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E69986D418D234690026878B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E69986D618D234690026878B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		E69986D818D234690026878B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E69986DA18D234690026878B /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
-		E69986DE18D234690026878B /* MiniChallenge-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MiniChallenge-Info.plist"; sourceTree = "<group>"; };
+		E69986DE18D234690026878B /* Pepes Adventure-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pepes Adventure-Info.plist"; sourceTree = "<group>"; };
 		E69986E018D234690026878B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E69986E218D234690026878B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E69986E418D234690026878B /* MiniChallenge-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MiniChallenge-Prefix.pch"; sourceTree = "<group>"; };
+		E69986E418D234690026878B /* Pepes Adventure-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pepes Adventure-Prefix.pch"; sourceTree = "<group>"; };
 		E69986E518D234690026878B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E69986E618D234690026878B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E69986E918D234690026878B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -111,9 +123,9 @@
 		E69986EE18D234690026878B /* EmJogo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmJogo.h; sourceTree = "<group>"; };
 		E69986EF18D234690026878B /* EmJogo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmJogo.m; sourceTree = "<group>"; };
 		E69986F318D234690026878B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		E69986F918D234690026878B /* MiniChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiniChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E69986F918D234690026878B /* Pepes AdventureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pepes AdventureTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E69986FA18D234690026878B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		E699870218D234690026878B /* MiniChallengeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MiniChallengeTests-Info.plist"; sourceTree = "<group>"; };
+		E699870218D234690026878B /* Pepes AdventureTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pepes AdventureTests-Info.plist"; sourceTree = "<group>"; };
 		E699870418D234690026878B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E699870618D234690026878B /* MiniChallengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiniChallengeTests.m; sourceTree = "<group>"; };
 		E699871818D241830026878B /* Personagem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Personagem.h; sourceTree = "<group>"; };
@@ -128,6 +140,7 @@
 			files = (
 				91D1F58918DA63B500F82100 /* MediaPlayer.framework in Frameworks */,
 				91D1F58718DA635A00F82100 /* AVFoundation.framework in Frameworks */,
+				91B0861518E528870077C336 /* GameKit.framework in Frameworks */,
 				91D1F58518DA62F300F82100 /* SpriteKit.framework in Frameworks */,
 				E69986D718D234690026878B /* CoreGraphics.framework in Frameworks */,
 				E69986D918D234690026878B /* UIKit.framework in Frameworks */,
@@ -148,9 +161,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		911E354319195C3000941842 /* Launch Image */ = {
+			isa = PBXGroup;
+			children = (
+				911E354419195C4200941842 /* launchR4.png */,
+				911E354519195C4200941842 /* launchx2.png */,
+			);
+			name = "Launch Image";
+			sourceTree = "<group>";
+		};
 		91968A7E18DBF9A900076DD8 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				91256F7A18E6A9A300E0E1A6 /* icon58.png */,
+				91256F7B18E6A9A300E0E1A6 /* icon80.png */,
 				91968A7F18DBF9BF00076DD8 /* icon120.png */,
 				91968A8018DBF9BF00076DD8 /* icon@2x.png */,
 				91968A8118DBF9BF00076DD8 /* icon.png */,
@@ -171,6 +195,8 @@
 		D643B83718D788A90033AFA6 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				916A200019217D4D005D8766 /* replaybutton.png */,
+				911E354319195C3000941842 /* Launch Image */,
 				91B0861218E51CA50077C336 /* botaoMenu.png */,
 				91D4989018E36C4B0015AEF1 /* Default_iOS7-568h@2x.png */,
 				91D4988E18E36AE20015AEF1 /* Default.png */,
@@ -203,8 +229,8 @@
 		E69986D218D234690026878B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E69986D118D234690026878B /* MiniChallenge.app */,
-				E69986F918D234690026878B /* MiniChallengeTests.xctest */,
+				E69986D118D234690026878B /* Pepes Adventure.app */,
+				E69986F918D234690026878B /* Pepes AdventureTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -212,6 +238,7 @@
 		E69986D318D234690026878B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				91B0861418E528870077C336 /* GameKit.framework */,
 				91D1F58818DA63B500F82100 /* MediaPlayer.framework */,
 				91D1F58618DA635A00F82100 /* AVFoundation.framework */,
 				E69986D418D234690026878B /* Foundation.framework */,
@@ -255,10 +282,10 @@
 		E69986DD18D234690026878B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E69986DE18D234690026878B /* MiniChallenge-Info.plist */,
+				E69986DE18D234690026878B /* Pepes Adventure-Info.plist */,
 				E69986DF18D234690026878B /* InfoPlist.strings */,
 				E69986E218D234690026878B /* main.m */,
-				E69986E418D234690026878B /* MiniChallenge-Prefix.pch */,
+				E69986E418D234690026878B /* Pepes Adventure-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -275,7 +302,7 @@
 		E699870118D234690026878B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E699870218D234690026878B /* MiniChallengeTests-Info.plist */,
+				E699870218D234690026878B /* Pepes AdventureTests-Info.plist */,
 				E699870318D234690026878B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -284,9 +311,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E69986D018D234690026878B /* MiniChallenge */ = {
+		E69986D018D234690026878B /* Pepes Adventure */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E699870A18D234690026878B /* Build configuration list for PBXNativeTarget "MiniChallenge" */;
+			buildConfigurationList = E699870A18D234690026878B /* Build configuration list for PBXNativeTarget "Pepes Adventure" */;
 			buildPhases = (
 				E69986CD18D234690026878B /* Sources */,
 				E69986CE18D234690026878B /* Frameworks */,
@@ -296,14 +323,14 @@
 			);
 			dependencies = (
 			);
-			name = MiniChallenge;
+			name = "Pepes Adventure";
 			productName = MiniChallenge;
-			productReference = E69986D118D234690026878B /* MiniChallenge.app */;
+			productReference = E69986D118D234690026878B /* Pepes Adventure.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E69986F818D234690026878B /* MiniChallengeTests */ = {
+		E69986F818D234690026878B /* Pepes AdventureTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E699870D18D234690026878B /* Build configuration list for PBXNativeTarget "MiniChallengeTests" */;
+			buildConfigurationList = E699870D18D234690026878B /* Build configuration list for PBXNativeTarget "Pepes AdventureTests" */;
 			buildPhases = (
 				E69986F518D234690026878B /* Sources */,
 				E69986F618D234690026878B /* Frameworks */,
@@ -314,9 +341,9 @@
 			dependencies = (
 				E69986FF18D234690026878B /* PBXTargetDependency */,
 			);
-			name = MiniChallengeTests;
+			name = "Pepes AdventureTests";
 			productName = MiniChallengeTests;
-			productReference = E69986F918D234690026878B /* MiniChallengeTests.xctest */;
+			productReference = E69986F918D234690026878B /* Pepes AdventureTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -326,14 +353,22 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = "Esdras Martins";
+				ORGANIZATIONNAME = Coan;
 				TargetAttributes = {
+					E69986D018D234690026878B = {
+						DevelopmentTeam = 7T8E66KCM7;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+						};
+					};
 					E69986F818D234690026878B = {
 						TestTargetID = E69986D018D234690026878B;
 					};
 				};
 			};
-			buildConfigurationList = E69986CC18D234690026878B /* Build configuration list for PBXProject "MiniChallenge" */;
+			buildConfigurationList = E69986CC18D234690026878B /* Build configuration list for PBXProject "Pepes Adventure" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -346,8 +381,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E69986D018D234690026878B /* MiniChallenge */,
-				E69986F818D234690026878B /* MiniChallengeTests */,
+				E69986D018D234690026878B /* Pepes Adventure */,
+				E69986F818D234690026878B /* Pepes AdventureTests */,
 			);
 		};
 /* End PBXProject section */
@@ -357,6 +392,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				911E354719195C4200941842 /* launchx2.png in Resources */,
+				91256F7D18E6A9A300E0E1A6 /* icon80.png in Resources */,
 				91968A8918DC154200076DD8 /* botaoRanking.png in Resources */,
 				D69E027118DA2C6000A3B976 /* p1.png in Resources */,
 				91B0861318E51CA50077C336 /* botaoMenu.png in Resources */,
@@ -373,6 +410,7 @@
 				E69986E118D234690026878B /* InfoPlist.strings in Resources */,
 				E6B66BF518D8A8FF0083843B /* parede.png in Resources */,
 				D69E027018DA2C6000A3B976 /* c3.png in Resources */,
+				916A200119217D4D005D8766 /* replaybutton.png in Resources */,
 				D69E026E18DA2C6000A3B976 /* c1.png in Resources */,
 				91968A8B18DC1E0800076DD8 /* tgif.mp3 in Resources */,
 				E69986F418D234690026878B /* Images.xcassets in Resources */,
@@ -380,7 +418,9 @@
 				D69E026F18DA2C6000A3B976 /* c2.png in Resources */,
 				91D1F59818DB72D000F82100 /* Jump.mp3 in Resources */,
 				E69986EA18D234690026878B /* Main.storyboard in Resources */,
+				911E354619195C4200941842 /* launchR4.png in Resources */,
 				91D4988F18E36AE20015AEF1 /* Default.png in Resources */,
+				91256F7C18E6A9A300E0E1A6 /* icon58.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,7 +464,7 @@
 /* Begin PBXTargetDependency section */
 		E69986FF18D234690026878B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E69986D018D234690026878B /* MiniChallenge */;
+			target = E69986D018D234690026878B /* Pepes Adventure */;
 			targetProxy = E69986FE18D234690026878B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -489,7 +529,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -521,7 +561,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -532,11 +572,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MiniChallenge/MiniChallenge-Prefix.pch";
-				INFOPLIST_FILE = "MiniChallenge/MiniChallenge-Info.plist";
+				GCC_PREFIX_HEADER = "MiniChallenge/Pepes Adventure-Prefix.pch";
+				INFOPLIST_FILE = "MiniChallenge/Pepes Adventure-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Pepes Adventure";
+				PROVISIONING_PROFILE = "F301C183-CB33-44DB-8BB8-5F725600E883";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -548,11 +591,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MiniChallenge/MiniChallenge-Prefix.pch";
-				INFOPLIST_FILE = "MiniChallenge/MiniChallenge-Info.plist";
+				GCC_PREFIX_HEADER = "MiniChallenge/Pepes Adventure-Prefix.pch";
+				INFOPLIST_FILE = "MiniChallenge/Pepes Adventure-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Pepes Adventure";
+				PROVISIONING_PROFILE = "F301C183-CB33-44DB-8BB8-5F725600E883";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -574,8 +620,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "MiniChallengeTests/MiniChallengeTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "MiniChallengeTests/Pepes AdventureTests-Info.plist";
+				PRODUCT_NAME = "Pepes AdventureTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -592,8 +638,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MiniChallenge/MiniChallenge-Prefix.pch";
-				INFOPLIST_FILE = "MiniChallengeTests/MiniChallengeTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "MiniChallengeTests/Pepes AdventureTests-Info.plist";
+				PRODUCT_NAME = "Pepes AdventureTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -602,7 +648,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E69986CC18D234690026878B /* Build configuration list for PBXProject "MiniChallenge" */ = {
+		E69986CC18D234690026878B /* Build configuration list for PBXProject "Pepes Adventure" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E699870818D234690026878B /* Debug */,
@@ -611,7 +657,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E699870A18D234690026878B /* Build configuration list for PBXNativeTarget "MiniChallenge" */ = {
+		E699870A18D234690026878B /* Build configuration list for PBXNativeTarget "Pepes Adventure" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E699870B18D234690026878B /* Debug */,
@@ -620,7 +666,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E699870D18D234690026878B /* Build configuration list for PBXNativeTarget "MiniChallengeTests" */ = {
+		E699870D18D234690026878B /* Build configuration list for PBXNativeTarget "Pepes AdventureTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E699870E18D234690026878B /* Debug */,

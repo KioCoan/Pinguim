@@ -35,7 +35,16 @@
     
 }
 
+-(BOOL)prefersStatusBarHidden{
+    return YES;
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
+}
+
 -(void)viewDidLoad{
+   // [[UIApplication sharedApplication]setStatusBarHidden:YES];
     [[self txtNome]setDelegate:self];
     
     
@@ -135,6 +144,7 @@
 
 -(void)desabilitaObjetos
 {
+    [self.txtNome resignFirstResponder];
     [self.musicaInicio stop];
     self.musicaInicio.currentTime = 0;
     self.imgFundo.alpha = 0;
@@ -159,7 +169,6 @@
     Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
     NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
     if (networkStatus == NotReachable) {
-        NSLog(@"There IS NO internet connection");
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@":("
                                                         message:@"Sem internet, sem olhar o ranking dos brothers\n #sad"
                                                        delegate:self
@@ -167,8 +176,6 @@
                                               otherButtonTitles:nil];
         [alert show];
     } else {
-        
-        NSLog(@"There IS internet connection");
         
         if(!_rankingAberto){
         _listaRanking = [[WSwebservice alloc]getRanking];
@@ -227,7 +234,6 @@
 -(void)confirmaDeletar{
     [self.viewRanking removeFromSuperview];
     _rankingAberto = NO;
-    NSLog(@"Deletou tabela");
 }
 
 //Coisas da TableView

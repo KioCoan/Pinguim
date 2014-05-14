@@ -21,5 +21,5 @@
 -(NSMutableArray*)getRanking;
 -(void)SalvarRanking:(NSArray*)dados;
 
-
+-(int)geraToken:(int)score nome:(NSString*)nome;
 @end

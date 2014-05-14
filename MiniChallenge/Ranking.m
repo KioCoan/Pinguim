@@ -16,11 +16,21 @@
     //Botão menu
     
     SKSpriteNode *botaoMenu = [SKSpriteNode spriteNodeWithImageNamed:@"botaoMenu"];
-    botaoMenu.position = CGPointMake(self.frame.size.width/2,self.frame.size.height / 4);
+    botaoMenu.position = CGPointMake(self.frame.size.width/2,self.frame.size.height / 3);
     botaoMenu.name = @"botaoMenuNode";//how the node is identified later
     botaoMenu.zPosition = 1.0;
 
     [self addChild:botaoMenu];
+    
+    //Botão play again
+    
+    SKSpriteNode* botaoReplay = [SKSpriteNode spriteNodeWithImageNamed:@"replaybutton"];
+    botaoReplay.size = CGSizeMake(botaoMenu.size.height, botaoMenu.size.height);
+    botaoReplay.position = CGPointMake(botaoReplay.size.width, self.frame.size.height - (botaoReplay.size.height));
+    botaoReplay.name = @"botaoReplay";
+    botaoReplay.zPosition = 2.0;
+    
+    [self addChild:botaoReplay];
     
     //Resto
     self.ws = [[WSwebservice alloc]init];
@@ -50,7 +60,7 @@
     
 
     SKLabelNode* lblScore = [[SKLabelNode alloc]init];
-    lblScore.text = [NSString stringWithFormat:@"%@ - %.f",self.nome,self.score];
+    lblScore.text = [NSString stringWithFormat:@"%@: %.f",self.nome,self.score];
     lblScore.position = CGPointMake(self.size.width/2, self.frame.size.height - 130);
         
     [self addChild:lblScore];
@@ -58,15 +68,15 @@
     Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
     NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
     if (networkStatus == NotReachable) {
-        NSLog(@"There IS NO internet connection");
+       // NSLog(@"There IS NO internet connection");
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@":("
-                                                        message:@"Aparentemente você está sem internet e sua pontuação não pode ser salva"
+                                                        message:@"Não há conexão com a internet, a pontuação não foi enviada"
                                                        delegate:self
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
         [alert show];
     } else {
-        NSLog(@"There IS internet connection");
+       // NSLog(@"There IS internet connection");
         self.myThread = [[NSThread alloc]initWithTarget:self selector:@selector(startThread) object:nil];
         [self.myThread start];
     }
@@ -108,13 +118,17 @@
         [[ViewController sharedViewController]voltar];
     }
     
-    [self voltaJogo];
+    
+    if ([node.name isEqualToString:@"botaoReplay"]){
+        [self voltaJogo];
+    }
+    //[self voltaJogo];
 }
 
 -(void)startThread{
-    NSLog(@"Startou Thread");
+    //NSLog(@"Startou Thread");
     NSArray *arrayDados = [[NSArray alloc]initWithObjects:[self nome],[NSString stringWithFormat:@"%.f",self.score], nil];
-    NSLog(@"%@     %@",[arrayDados objectAtIndex:0],[arrayDados objectAtIndex:1]);
+    //NSLog(@"%@     %@",[arrayDados objectAtIndex:0],[arrayDados objectAtIndex:1]);
     [self.ws SalvarRanking:arrayDados];
     [self.myThread cancel];
 }

@@ -27,7 +27,7 @@
         NSDictionary* ranking = [rankingList objectAtIndex:i];
         nomes = [ranking objectForKey:@"NOME"];
         scores = [ranking objectForKey:@"SCORE"];
-        NSLog(@"Nome: %@ Score: %@\n",nomes,scores);
+       // NSLog(@"Nome: %@ Score: %@\n",nomes,scores);
         [[self resultado] addObject:[NSArray arrayWithObjects:nomes,scores, nil]];
     }
     return [self resultado];
@@ -37,14 +37,19 @@
     NSString* nome,*score,*token;
     nome = [dados objectAtIndex:0];
     score = [dados objectAtIndex:1];
-    token = @"bee0836567f8ea97646b4c57a79473e3";
+    token = [NSString stringWithFormat:@"%d",[self geraToken:score.intValue nome:nome]];
     NSString* format = [NSString stringWithFormat:@"http://www.420blazeitswag.com/wsGame/functions.php?funcao=saveRanking&nome=%@&score=%@&token=%@",nome,score,token];
     NSData *data = [format dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSString* url = [[NSString alloc]initWithData:data encoding:NSASCIIStringEncoding];
     url = [url stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     _acesso = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:url]];
-    NSLog(@"Terminou salvar ranking");
-    
+    //NSLog(@"Terminou salvar ranking");
 }
 
+-(int)geraToken:(int)score nome:(NSString *)nome{
+    int chars = (int)[nome length];
+    chars *= 3;
+    int token = chars + (score * 2);
+    return token;
+}
 @end

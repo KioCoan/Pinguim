@@ -85,13 +85,13 @@
     }
     
     
-    NSLog(@"%.2f", self.score/100);
-    
-    
-    
-    
+//    NSLog(@"%.2f", self.score/100);
 
     
+}
+
+-(BOOL)prefersStatusBarHidden{
+    return YES;
 }
 
 - (void)updateWithTimeSinceLastUpdate:(CFTimeInterval)timeSinceLast
@@ -101,20 +101,30 @@
     // Lógica para criar o chao
     
     
-    if(self.player.estado == PULANDO){
-        
-        self.scoreCount +=0.18;
-    }
+    
     
     [self verificaMorte];
     if (self.jogoAtivo)
     {
+        
+        if(self.player.estado == PULANDO && (!self.querdaInicial)){
+            self.scoreCount += 0.028;
+        }
+        if(self.player.estado == CORRENDO && (!self.querdaInicial)){
+            self.score += self.scoreCount;
+            self.scoreCount = 0;
+        }
+        
+        if(self.player.estado == CORRENDO){
+            self.querdaInicial = NO;
+        }
+        
         self.timer -= timeSinceLast * 60;
         
         if(self.timer <= 90 && !self.scoreCount)
         {
-            self.score += 100;
-            self.scoreCount = true;
+            //self.score += 100;
+            //self.scoreCount = true;
             if (self.score > 0)
             {
                 //[self runAction:[SKAction playSoundFileNamed:@"beep.wav" waitForCompletion:NO]];
@@ -128,7 +138,7 @@
             self.timer = 20;
             [[self floor] addFloor];
         }
-        self.lblScore.text = [NSString stringWithFormat:@"Score: %.f", self.score / 100];
+        self.lblScore.text = [NSString stringWithFormat:@"Score: %.f", self.score];
     }
 }
 
@@ -153,6 +163,8 @@
     
     [self removeAllChildren];
     self.score = 0.0;
+    self.player.estado = PULANDO;
+    self.querdaInicial = YES;
     
     //Posiciona lblScore
     

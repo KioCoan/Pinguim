@@ -22,6 +22,7 @@
 @property BOOL jogoAtivo;
 @property float scoreCount;
 
+@property BOOL querdaInicial;
 @property float score;
 @property SKLabelNode *lblScore;
 
