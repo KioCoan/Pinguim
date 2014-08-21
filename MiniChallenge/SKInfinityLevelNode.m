@@ -78,6 +78,8 @@
     SKSpriteNode *new = [[SKSpriteNode alloc] initWithTexture:[self imgFloor]];
     SKSpriteNode *colisao = [[SKSpriteNode alloc] initWithImageNamed:@"parede"];
     
+    new.size = CGSizeMake(new.size.width, 2500);
+    
     //Se não for o primeiro pedaço, define a posição de acordo com a posição do anterior.
     if ([self lastFloor]) {
         
