@@ -178,7 +178,7 @@
     
     
     //Background
-    SKTexture *bg = [SKTexture textureWithImageNamed:@"bgmenor"];
+    SKTexture *bg = [SKTexture textureWithImageNamed:@"bgGameplayVu"];
     SKSpriteNode *nodeBg = [[SKSpriteNode alloc]initWithTexture:bg];
     nodeBg.size = CGSizeMake(self.frame.size.width, self.frame.size.height);
     nodeBg.position = CGPointMake(self.size.width / 2,self.size.height / 2);
@@ -200,7 +200,7 @@
     
     
     
-    SKTexture *textureFloor = [SKTexture textureWithImageNamed:@"rect"];
+    SKTexture *textureFloor = [SKTexture textureWithImageNamed:@"rectVu"];
     CGPoint initialPos = CGPointMake(190, 10);
     CGSize size = CGSizeMake(100, 100);
     
@@ -266,8 +266,10 @@
     [ViewController sharedViewController].skView.showsFPS = NO;
     [ViewController sharedViewController].skView.showsNodeCount = NO;
     
+    float scoreValue = [[NSString stringWithFormat:@"%.f",self.score]floatValue];
+    
     // Create and configure the scene.
-    SKScene * scene = [[Ranking alloc]initWithSize:self.view.bounds.size : self.nomeJogador : self.score];
+    SKScene * scene = [[Ranking alloc]initWithSize:self.view.bounds.size : self.nomeJogador : scoreValue];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     // Present the scene.
     [[ViewController sharedViewController].skView presentScene:scene];

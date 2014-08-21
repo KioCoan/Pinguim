@@ -15,6 +15,8 @@
 
 @interface ViewController : UIViewController <UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIImageView *imgPinguim;
+@property (weak, nonatomic) IBOutlet UILabel *lblRecord;
 @property SKView* skView;
 - (IBAction)iniciaGame:(id)sender;
 - (IBAction)abreRanking:(id)sender;

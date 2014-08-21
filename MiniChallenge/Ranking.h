@@ -26,6 +26,6 @@
 -(void)initWithScore:(float)score : (NSString*)nomeJogador;
 
 -(void)voltaJogo;
-
+-(void)atualizaRankingLocal:(float)novaPontuacao;
 
 @end

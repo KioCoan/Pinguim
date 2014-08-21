@@ -13,7 +13,12 @@
 
 -(void)initWithScore:(float)score :(NSString *)nomeJogador{
     
+    //Atualiza o record atual
+    [self atualizaRankingLocal:score];
+    
+    
     //Botão menu
+    
     
     SKSpriteNode *botaoMenu = [SKSpriteNode spriteNodeWithImageNamed:@"botaoMenu"];
     botaoMenu.position = CGPointMake(self.frame.size.width/2,self.frame.size.height / 3);
@@ -39,7 +44,7 @@
         nomeJogador = @"Anonymous Penguin";
     }
     
-    self.score = score / 100;
+    self.score = score;
     self.nome = nomeJogador;
     self.lblRanking = [[SKLabelNode alloc]init];
     self.lblRanking.fontSize = 12;
@@ -47,14 +52,14 @@
     
     
     
-    SKSpriteNode* bg = [[SKSpriteNode alloc]initWithImageNamed:@"bgmenor"];
+    SKSpriteNode* bg = [[SKSpriteNode alloc]initWithImageNamed:@"bgGameplayVu"];
     bg.size = self.size;
     bg.position = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2);
     [self addChild:bg];
     
     //Mensagem Game Over
     SKLabelNode* gameOver = [[SKLabelNode alloc]init];
-    gameOver.text = @"GAME OVER";
+    gameOver.text = @"Game Over";
     gameOver.position = CGPointMake(self.size.width / 2, self.frame.size.height - 70);
     [self addChild:gameOver];
     
@@ -133,6 +138,13 @@
     [self.myThread cancel];
 }
 
-
+-(void)atualizaRankingLocal:(float)novaPontuacao{
+    float recordLocal = [[NSUserDefaults standardUserDefaults]floatForKey:@"recordLocal"];
+    NSLog(@"%.f eeee novo: %.f",recordLocal,novaPontuacao);
+    
+    if (recordLocal < novaPontuacao) {
+        [[NSUserDefaults standardUserDefaults]setFloat:novaPontuacao forKey:@"recordLocal"];
+    }
+}
 
 @end

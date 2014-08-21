@@ -35,19 +35,19 @@
     
 }
 
+
 -(BOOL)prefersStatusBarHidden{
     return YES;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
+    [self recordLocal];
 }
 
 -(void)viewDidLoad{
-   // [[UIApplication sharedApplication]setStatusBarHidden:YES];
+  
     [[self txtNome]setDelegate:self];
-    
-    
     
     NSURL* urlMusica = [[NSURL alloc]initFileURLWithPath:[[NSBundle mainBundle] pathForResource:@"tgif" ofType:@"mp3"]];
     _musicaInicio = [[AVAudioPlayer alloc]initWithContentsOfURL:urlMusica error:nil];
@@ -66,6 +66,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -114,12 +115,6 @@
 
 - (IBAction)iniciaGame:(UIButton *)sender {
     
-   // [sender removeFromSuperview];
-   // [self.imgFundo removeFromSuperview];
-   // [self.txtNome removeFromSuperview];
-   // [self.lblNome removeFromSuperview];
-   // [self.btnRanking removeFromSuperview];
-   // [_musicaInicio stop];
     [self desabilitaObjetos];
     
     self.skView = (SKView *)self.view;
@@ -140,6 +135,7 @@
     [self habilitarObjetos];
     [self.musicaInicio prepareToPlay];
     [self.musicaInicio play];
+    [self recordLocal];
 }
 
 -(void)desabilitaObjetos
@@ -152,6 +148,8 @@
     self.lblNome.alpha = 0;
     self.btnRanking.alpha = 0;
     self.btnPlay.alpha = 0;
+    self.lblRecord.alpha = 0;
+    self.imgPinguim.alpha = 0;
 }
 
 -(void)habilitarObjetos
@@ -161,6 +159,8 @@
     self.lblNome.alpha = 1;
     self.btnRanking.alpha = 1;
     self.btnPlay.alpha = 1;
+    self.lblRecord.alpha = 1;
+    self.imgPinguim.alpha = 1;
 }
 
 - (IBAction)abreRanking:(id)sender {
@@ -192,7 +192,7 @@
         _tableView.rowHeight = 25;
         _tableView.scrollEnabled = YES;
         _tableView.showsVerticalScrollIndicator = YES;
-        _tableView.userInteractionEnabled = NO;
+        _tableView.userInteractionEnabled = YES;
         _tableView.bounces = YES;
         _tableView.delegate = self;
         _tableView.dataSource = self;
@@ -250,7 +250,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     // The header for the section is the region name -- get this from the region at the section index.
-    return @"Ranking do jogo Bolado";
+    return @"Ranking";
 }
 
 
@@ -267,6 +267,9 @@
     return cell;
 }
 
-
+-(void)recordLocal{
+    NSString* recordLocal = [NSString stringWithFormat:@"Record: %.f",[[NSUserDefaults standardUserDefaults]floatForKey:@"recordLocal"]];
+    self.lblRecord.text = recordLocal;
+}
 
 @end

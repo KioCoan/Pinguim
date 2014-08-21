@@ -33,6 +33,16 @@
 		91D1F5A118DBD81B00F82100 /* botaoHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D1F59F18DBD81B00F82100 /* botaoHighlight.png */; };
 		91D4988F18E36AE20015AEF1 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D4988E18E36AE20015AEF1 /* Default.png */; };
 		91D4989118E36C4B0015AEF1 /* Default_iOS7-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D4989018E36C4B0015AEF1 /* Default_iOS7-568h@2x.png */; };
+		91FD8F2019A5C14700ED9B17 /* bgGameplayVu.png in Resources */ = {isa = PBXBuildFile; fileRef = 91FD8F1419A5C14700ED9B17 /* bgGameplayVu.png */; };
+		91FD8F2119A5C14700ED9B17 /* bgMenuVu.png in Resources */ = {isa = PBXBuildFile; fileRef = 91FD8F1519A5C14700ED9B17 /* bgMenuVu.png */; };
+		91FD8F2219A5C14700ED9B17 /* botaoRankingVu.png in Resources */ = {isa = PBXBuildFile; fileRef = 91FD8F1719A5C14700ED9B17 /* botaoRankingVu.png */; };
+		91FD8F2319A5C14700ED9B17 /* botaoVu.png in Resources */ = {isa = PBXBuildFile; fileRef = 91FD8F1819A5C14700ED9B17 /* botaoVu.png */; };
+		91FD8F2419A5C14700ED9B17 /* botaoVuHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 91FD8F1919A5C14700ED9B17 /* botaoVuHighlight.png */; };
+		91FD8F2519A5C14700ED9B17 /* rectVu.png in Resources */ = {isa = PBXBuildFile; fileRef = 91FD8F1A19A5C14700ED9B17 /* rectVu.png */; };
+		91FD8F2619A5C14700ED9B17 /* c1Vu.png in Resources */ = {isa = PBXBuildFile; fileRef = 91FD8F1C19A5C14700ED9B17 /* c1Vu.png */; };
+		91FD8F2719A5C14700ED9B17 /* c2Vu.png in Resources */ = {isa = PBXBuildFile; fileRef = 91FD8F1D19A5C14700ED9B17 /* c2Vu.png */; };
+		91FD8F2819A5C14700ED9B17 /* c3Vu.png in Resources */ = {isa = PBXBuildFile; fileRef = 91FD8F1E19A5C14700ED9B17 /* c3Vu.png */; };
+		91FD8F2919A5C14700ED9B17 /* p1Vu.png in Resources */ = {isa = PBXBuildFile; fileRef = 91FD8F1F19A5C14700ED9B17 /* p1Vu.png */; };
 		D62B2CB918D78F830021795A /* SKInfinityLevelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D62B2CB718D78F830021795A /* SKInfinityLevelNode.m */; };
 		D69E026E18DA2C6000A3B976 /* c1.png in Resources */ = {isa = PBXBuildFile; fileRef = D69E026A18DA2C6000A3B976 /* c1.png */; };
 		D69E026F18DA2C6000A3B976 /* c2.png in Resources */ = {isa = PBXBuildFile; fileRef = D69E026B18DA2C6000A3B976 /* c2.png */; };
@@ -98,6 +108,16 @@
 		91D1F59F18DBD81B00F82100 /* botaoHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = botaoHighlight.png; sourceTree = "<group>"; };
 		91D4988E18E36AE20015AEF1 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		91D4989018E36C4B0015AEF1 /* Default_iOS7-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default_iOS7-568h@2x.png"; sourceTree = "<group>"; };
+		91FD8F1419A5C14700ED9B17 /* bgGameplayVu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgGameplayVu.png; sourceTree = "<group>"; };
+		91FD8F1519A5C14700ED9B17 /* bgMenuVu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgMenuVu.png; sourceTree = "<group>"; };
+		91FD8F1719A5C14700ED9B17 /* botaoRankingVu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = botaoRankingVu.png; sourceTree = "<group>"; };
+		91FD8F1819A5C14700ED9B17 /* botaoVu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = botaoVu.png; sourceTree = "<group>"; };
+		91FD8F1919A5C14700ED9B17 /* botaoVuHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = botaoVuHighlight.png; sourceTree = "<group>"; };
+		91FD8F1A19A5C14700ED9B17 /* rectVu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rectVu.png; sourceTree = "<group>"; };
+		91FD8F1C19A5C14700ED9B17 /* c1Vu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = c1Vu.png; sourceTree = "<group>"; };
+		91FD8F1D19A5C14700ED9B17 /* c2Vu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = c2Vu.png; sourceTree = "<group>"; };
+		91FD8F1E19A5C14700ED9B17 /* c3Vu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = c3Vu.png; sourceTree = "<group>"; };
+		91FD8F1F19A5C14700ED9B17 /* p1Vu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p1Vu.png; sourceTree = "<group>"; };
 		D62B2CB618D78F830021795A /* SKInfinityLevelNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKInfinityLevelNode.h; sourceTree = "<group>"; };
 		D62B2CB718D78F830021795A /* SKInfinityLevelNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKInfinityLevelNode.m; sourceTree = "<group>"; };
 		D69E026A18DA2C6000A3B976 /* c1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = c1.png; sourceTree = "<group>"; };
@@ -192,6 +212,47 @@
 			name = Sons;
 			sourceTree = "<group>";
 		};
+		91FD8F1219A5C0B800ED9B17 /* imagensVU */ = {
+			isa = PBXGroup;
+			children = (
+				91FD8F1319A5C14700ED9B17 /* PepeVU */,
+			);
+			name = imagensVU;
+			sourceTree = "<group>";
+		};
+		91FD8F1319A5C14700ED9B17 /* PepeVU */ = {
+			isa = PBXGroup;
+			children = (
+				91FD8F1419A5C14700ED9B17 /* bgGameplayVu.png */,
+				91FD8F1519A5C14700ED9B17 /* bgMenuVu.png */,
+				91FD8F1619A5C14700ED9B17 /* Botões */,
+				91FD8F1A19A5C14700ED9B17 /* rectVu.png */,
+				91FD8F1B19A5C14700ED9B17 /* Sprites */,
+			);
+			path = PepeVU;
+			sourceTree = "<group>";
+		};
+		91FD8F1619A5C14700ED9B17 /* Botões */ = {
+			isa = PBXGroup;
+			children = (
+				91FD8F1719A5C14700ED9B17 /* botaoRankingVu.png */,
+				91FD8F1819A5C14700ED9B17 /* botaoVu.png */,
+				91FD8F1919A5C14700ED9B17 /* botaoVuHighlight.png */,
+			);
+			path = "Botões";
+			sourceTree = "<group>";
+		};
+		91FD8F1B19A5C14700ED9B17 /* Sprites */ = {
+			isa = PBXGroup;
+			children = (
+				91FD8F1C19A5C14700ED9B17 /* c1Vu.png */,
+				91FD8F1D19A5C14700ED9B17 /* c2Vu.png */,
+				91FD8F1E19A5C14700ED9B17 /* c3Vu.png */,
+				91FD8F1F19A5C14700ED9B17 /* p1Vu.png */,
+			);
+			path = Sprites;
+			sourceTree = "<group>";
+		};
 		D643B83718D788A90033AFA6 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +314,7 @@
 		E69986DC18D234690026878B /* MiniChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				91FD8F1219A5C0B800ED9B17 /* imagensVU */,
 				91968A8C18DC2A9200076DD8 /* Reachability.h */,
 				91968A8D18DC2A9200076DD8 /* Reachability.m */,
 				91968A8618DBFBCA00076DD8 /* WSwebservice.h */,
@@ -394,26 +456,36 @@
 			files = (
 				911E354719195C4200941842 /* launchx2.png in Resources */,
 				91256F7D18E6A9A300E0E1A6 /* icon80.png in Resources */,
+				91FD8F2619A5C14700ED9B17 /* c1Vu.png in Resources */,
+				91FD8F2719A5C14700ED9B17 /* c2Vu.png in Resources */,
 				91968A8918DC154200076DD8 /* botaoRanking.png in Resources */,
 				D69E027118DA2C6000A3B976 /* p1.png in Resources */,
 				91B0861318E51CA50077C336 /* botaoMenu.png in Resources */,
+				91FD8F2519A5C14700ED9B17 /* rectVu.png in Resources */,
 				91D1F5A018DBD81B00F82100 /* botao.png in Resources */,
 				91D1F5A118DBD81B00F82100 /* botaoHighlight.png in Resources */,
+				91FD8F2419A5C14700ED9B17 /* botaoVuHighlight.png in Resources */,
 				D69E027318DA2CA000A3B976 /* rect2.png in Resources */,
+				91FD8F2819A5C14700ED9B17 /* c3Vu.png in Resources */,
 				91D4989118E36C4B0015AEF1 /* Default_iOS7-568h@2x.png in Resources */,
 				D69E027518DA31C400A3B976 /* rect.png in Resources */,
+				91FD8F2119A5C14700ED9B17 /* bgMenuVu.png in Resources */,
 				91D1F59D18DBD58500F82100 /* bgMenu.png in Resources */,
 				91D1F59618DB6D6100F82100 /* bgmenor.png in Resources */,
 				91968A8218DBF9BF00076DD8 /* icon120.png in Resources */,
 				91968A8318DBF9BF00076DD8 /* icon@2x.png in Resources */,
+				91FD8F2219A5C14700ED9B17 /* botaoRankingVu.png in Resources */,
 				91D1F58E18DA664600F82100 /* bebold.mp3 in Resources */,
 				E69986E118D234690026878B /* InfoPlist.strings in Resources */,
+				91FD8F2919A5C14700ED9B17 /* p1Vu.png in Resources */,
 				E6B66BF518D8A8FF0083843B /* parede.png in Resources */,
 				D69E027018DA2C6000A3B976 /* c3.png in Resources */,
 				916A200119217D4D005D8766 /* replaybutton.png in Resources */,
 				D69E026E18DA2C6000A3B976 /* c1.png in Resources */,
 				91968A8B18DC1E0800076DD8 /* tgif.mp3 in Resources */,
+				91FD8F2019A5C14700ED9B17 /* bgGameplayVu.png in Resources */,
 				E69986F418D234690026878B /* Images.xcassets in Resources */,
+				91FD8F2319A5C14700ED9B17 /* botaoVu.png in Resources */,
 				91968A8418DBF9BF00076DD8 /* icon.png in Resources */,
 				D69E026F18DA2C6000A3B976 /* c2.png in Resources */,
 				91D1F59818DB72D000F82100 /* Jump.mp3 in Resources */,
@@ -573,13 +645,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MiniChallenge/Pepes Adventure-Prefix.pch";
 				INFOPLIST_FILE = "MiniChallenge/Pepes Adventure-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "Pepes Adventure";
-				PROVISIONING_PROFILE = "F301C183-CB33-44DB-8BB8-5F725600E883";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -592,13 +664,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MiniChallenge/Pepes Adventure-Prefix.pch";
 				INFOPLIST_FILE = "MiniChallenge/Pepes Adventure-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "Pepes Adventure";
-				PROVISIONING_PROFILE = "F301C183-CB33-44DB-8BB8-5F725600E883";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

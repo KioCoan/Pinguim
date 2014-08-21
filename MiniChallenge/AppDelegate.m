@@ -13,6 +13,21 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    NSString* dateKey = @"dateKey";
+    NSDate* lastRead = (NSDate*)[[NSUserDefaults standardUserDefaults]objectForKey:dateKey];
+    if (lastRead == nil) {
+        
+        NSDictionary *appDefaults  = [NSDictionary dictionaryWithObjectsAndKeys:[NSDate date], dateKey, nil];
+        
+        // do any other initialization you want to do here - e.g. the starting default values.
+        // [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"should_play_sounds"];
+        [[NSUserDefaults standardUserDefaults]setFloat:0 forKey:@"recordLocal"];
+        
+        // sync the defaults to disk
+        [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:dateKey];
     return YES;
 }
 							
