@@ -173,6 +173,7 @@
     self.lblScore.text = [NSString stringWithFormat:@"Score: %.f",self.score /100 ];
     self.lblScore.zPosition = 150;
     self.lblScore.fontSize = 15;
+    //self.lblScore.fontName = @"Helvetica Neue";
     [self addChild:self.lblScore];
     
     

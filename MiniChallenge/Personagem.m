@@ -72,18 +72,18 @@
     //Carregando Imagens
     
         //Correndo
-    SKTexture *correndo1 = [SKTexture textureWithImageNamed:@"c1"];
+    SKTexture *correndo1 = [SKTexture textureWithImageNamed:@"c1Vu"];
     correndo1.filteringMode = SKTextureFilteringNearest;
     
-    SKTexture *correndo2 = [SKTexture textureWithImageNamed:@"c2"];
+    SKTexture *correndo2 = [SKTexture textureWithImageNamed:@"c2Vu"];
     correndo2.filteringMode = SKTextureFilteringNearest;
     
-    SKTexture *correndo3 = [SKTexture textureWithImageNamed:@"c3"];
+    SKTexture *correndo3 = [SKTexture textureWithImageNamed:@"c3Vu"];
     correndo3.filteringMode = SKTextureFilteringNearest;
     
     
         //Pulando
-    SKTexture *pulando1 = [SKTexture textureWithImageNamed:@"p1"];
+    SKTexture *pulando1 = [SKTexture textureWithImageNamed:@"p1Vu"];
     
     
     
