@@ -22,6 +22,7 @@
         // do any other initialization you want to do here - e.g. the starting default values.
         // [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"should_play_sounds"];
         [[NSUserDefaults standardUserDefaults]setFloat:0 forKey:@"recordLocal"];
+        [[NSUserDefaults standardUserDefaults]setBool:NO forKey:@"mutado"];
         
         // sync the defaults to disk
         [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];

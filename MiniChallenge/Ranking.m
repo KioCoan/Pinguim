@@ -31,7 +31,7 @@
     
     SKSpriteNode* botaoReplay = [SKSpriteNode spriteNodeWithImageNamed:@"replaybutton"];
     botaoReplay.size = CGSizeMake(botaoMenu.size.height, botaoMenu.size.height);
-    botaoReplay.position = CGPointMake(botaoReplay.size.width, self.frame.size.height - (botaoReplay.size.height));
+    botaoReplay.position = CGPointMake(self.size.width - botaoReplay.size.width, self.frame.size.height - (botaoReplay.size.height));
     botaoReplay.name = @"botaoReplay";
     botaoReplay.zPosition = 2.0;
     
@@ -52,7 +52,7 @@
     
     
     
-    SKSpriteNode* bg = [[SKSpriteNode alloc]initWithImageNamed:@"bgGameplayVu"];
+    SKSpriteNode* bg = [[SKSpriteNode alloc]initWithImageNamed:@"bgmenor"];
     bg.size = self.size;
     bg.position = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2);
     [self addChild:bg];
@@ -140,8 +140,6 @@
 
 -(void)atualizaRankingLocal:(float)novaPontuacao{
     float recordLocal = [[NSUserDefaults standardUserDefaults]floatForKey:@"recordLocal"];
-    NSLog(@"%.f eeee novo: %.f",recordLocal,novaPontuacao);
-    
     if (recordLocal < novaPontuacao) {
         [[NSUserDefaults standardUserDefaults]setFloat:novaPontuacao forKey:@"recordLocal"];
     }

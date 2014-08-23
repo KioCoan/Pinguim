@@ -29,13 +29,18 @@
         
         NSURL* urlMusica = [[NSURL alloc]initFileURLWithPath:[[NSBundle mainBundle] pathForResource:@"bebold" ofType:@"mp3"]];
         self.musica = [[AVAudioPlayer alloc]initWithContentsOfURL:urlMusica error:nil];
-        [self.musica setVolume:0.8];
+        
+        if([[NSUserDefaults standardUserDefaults]boolForKey:@"mutado"]){
+            [self.musica setVolume:0];
+        }else{
+            [self.musica setVolume:0.8];
+        }
+
         [[self musica]prepareToPlay];
         [self.musica setNumberOfLoops:-1];
         
         
         //Resto
-        
         
         
         [self start];
@@ -54,6 +59,15 @@
     
     UITouch *t = [touches anyObject];
     
+    CGPoint location = [t locationInNode:self];
+    SKNode* node = [self nodeAtPoint:location];
+    
+    if ([node.name isEqualToString:@"botaoVolume"]) {
+        SKSpriteNode* nodeSprite = (SKSpriteNode*)node;
+        [self mudaVolume:nodeSprite];
+        return;
+    }
+    
     int forca = [t locationInView:self.view].y;
     
     [self.player pular:abs( ((forca/40) -8)*15 )];
@@ -62,6 +76,7 @@
     self.jogoAtivo = TRUE;
     self.player.personagem.physicsBody.dynamic = YES;
     [[self floor] setMovingEnable];
+    
     
 }
 
@@ -176,10 +191,11 @@
     //self.lblScore.fontName = @"Helvetica Neue";
     [self addChild:self.lblScore];
     
-    
+    //Botão de mutar
+    [self geraBotaoVolume];
     
     //Background
-    SKTexture *bg = [SKTexture textureWithImageNamed:@"bgGameplayVu"];
+    SKTexture *bg = [SKTexture textureWithImageNamed:@"bgMenor"];
     SKSpriteNode *nodeBg = [[SKSpriteNode alloc]initWithTexture:bg];
     nodeBg.size = CGSizeMake(self.frame.size.width, self.frame.size.height);
     nodeBg.position = CGPointMake(self.size.width / 2,self.size.height / 2);
@@ -201,7 +217,7 @@
     
     
     
-    SKTexture *textureFloor = [SKTexture textureWithImageNamed:@"rectVu"];
+    SKTexture *textureFloor = [SKTexture textureWithImageNamed:@"rect"];
     CGPoint initialPos = CGPointMake(190, 10);
     CGSize size = CGSizeMake(100, 100);
     
@@ -274,6 +290,41 @@
     scene.scaleMode = SKSceneScaleModeAspectFill;
     // Present the scene.
     [[ViewController sharedViewController].skView presentScene:scene];
+}
+
+-(void)geraBotaoVolume{
+    BOOL mutado = [[NSUserDefaults standardUserDefaults]boolForKey:@"mutado"];
+    
+    NSString* stringBotao = [[NSString alloc]init];
+    
+    if(mutado){
+       stringBotao = @"volumeMute.png";
+    }else{
+       stringBotao = @"volume.png";
+    }
+    
+    SKTexture* iconeVolume = [SKTexture textureWithImageNamed:stringBotao];
+    SKSpriteNode* botaoVolume = [SKSpriteNode spriteNodeWithTexture:iconeVolume];
+    botaoVolume.size = CGSizeMake(40, 40);
+    botaoVolume.zPosition = 15;
+    botaoVolume.name = @"botaoVolume";
+    
+    botaoVolume.position = CGPointMake(botaoVolume.size.width, self.size.height - botaoVolume.size.height);
+    [self addChild:botaoVolume];
+}
+
+-(void)mudaVolume:(SKSpriteNode*)botao{
+     BOOL mutado = [[NSUserDefaults standardUserDefaults]boolForKey:@"mutado"];
+    if (mutado) {
+        [[NSUserDefaults standardUserDefaults]setBool:NO forKey:@"mutado"];
+        botao.texture = [SKTexture textureWithImageNamed:@"volume"];
+        self.musica.volume = 0.8;
+    }else{
+        [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"mutado"];
+        botao.texture = [SKTexture textureWithImageNamed:@"volumeMute"];
+        self.musica.volume = 0;
+
+    }
 }
 
 @end

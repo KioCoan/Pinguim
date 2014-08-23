@@ -51,7 +51,12 @@
     
     NSURL* urlMusica = [[NSURL alloc]initFileURLWithPath:[[NSBundle mainBundle] pathForResource:@"tgif" ofType:@"mp3"]];
     _musicaInicio = [[AVAudioPlayer alloc]initWithContentsOfURL:urlMusica error:nil];
-    [_musicaInicio setVolume:1.0];
+    if([[NSUserDefaults standardUserDefaults]boolForKey:@"mutado"]){
+        [_musicaInicio setVolume:0];
+    }else{
+        [_musicaInicio setVolume:0.8];
+    }
+    
     [_musicaInicio setNumberOfLoops:-1];
     [_musicaInicio prepareToPlay];
     [_musicaInicio play];
@@ -136,6 +141,11 @@
     [self.musicaInicio prepareToPlay];
     [self.musicaInicio play];
     [self recordLocal];
+    if([[NSUserDefaults standardUserDefaults]boolForKey:@"mutado"]){
+        [_musicaInicio setVolume:0];
+    }else{
+        [_musicaInicio setVolume:0.8];
+    }
 }
 
 -(void)desabilitaObjetos
@@ -160,7 +170,7 @@
     self.btnRanking.alpha = 1;
     self.btnPlay.alpha = 1;
     self.lblRecord.alpha = 1;
-    self.imgPinguim.alpha = 1;
+    self.imgPinguim.alpha = 0.09;
 }
 
 - (IBAction)abreRanking:(id)sender {

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91102A6F19A8780F00596E7A /* menuBotao.png in Resources */ = {isa = PBXBuildFile; fileRef = 91102A6B19A8780F00596E7A /* menuBotao.png */; };
+		91102A7019A8780F00596E7A /* menuHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 91102A6C19A8780F00596E7A /* menuHighlight.png */; };
+		91102A7119A8780F00596E7A /* volume.png in Resources */ = {isa = PBXBuildFile; fileRef = 91102A6D19A8780F00596E7A /* volume.png */; };
+		91102A7219A8780F00596E7A /* volumeMute.png in Resources */ = {isa = PBXBuildFile; fileRef = 91102A6E19A8780F00596E7A /* volumeMute.png */; };
 		911E354619195C4200941842 /* launchR4.png in Resources */ = {isa = PBXBuildFile; fileRef = 911E354419195C4200941842 /* launchR4.png */; };
 		911E354719195C4200941842 /* launchx2.png in Resources */ = {isa = PBXBuildFile; fileRef = 911E354519195C4200941842 /* launchx2.png */; };
 		91256F7C18E6A9A300E0E1A6 /* icon58.png in Resources */ = {isa = PBXBuildFile; fileRef = 91256F7A18E6A9A300E0E1A6 /* icon58.png */; };
@@ -80,6 +84,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		91102A6B19A8780F00596E7A /* menuBotao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuBotao.png; sourceTree = "<group>"; };
+		91102A6C19A8780F00596E7A /* menuHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuHighlight.png; sourceTree = "<group>"; };
+		91102A6D19A8780F00596E7A /* volume.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volume.png; sourceTree = "<group>"; };
+		91102A6E19A8780F00596E7A /* volumeMute.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volumeMute.png; sourceTree = "<group>"; };
 		911E354419195C4200941842 /* launchR4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchR4.png; sourceTree = "<group>"; };
 		911E354519195C4200941842 /* launchx2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchx2.png; sourceTree = "<group>"; };
 		91256F7A18E6A9A300E0E1A6 /* icon58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon58.png; sourceTree = "<group>"; };
@@ -235,6 +243,10 @@
 		91FD8F1619A5C14700ED9B17 /* Botões */ = {
 			isa = PBXGroup;
 			children = (
+				91102A6B19A8780F00596E7A /* menuBotao.png */,
+				91102A6C19A8780F00596E7A /* menuHighlight.png */,
+				91102A6D19A8780F00596E7A /* volume.png */,
+				91102A6E19A8780F00596E7A /* volumeMute.png */,
 				91FD8F1719A5C14700ED9B17 /* botaoRankingVu.png */,
 				91FD8F1819A5C14700ED9B17 /* botaoVu.png */,
 				91FD8F1919A5C14700ED9B17 /* botaoVuHighlight.png */,
@@ -456,13 +468,16 @@
 			files = (
 				911E354719195C4200941842 /* launchx2.png in Resources */,
 				91256F7D18E6A9A300E0E1A6 /* icon80.png in Resources */,
+				91102A6F19A8780F00596E7A /* menuBotao.png in Resources */,
 				91FD8F2619A5C14700ED9B17 /* c1Vu.png in Resources */,
 				91FD8F2719A5C14700ED9B17 /* c2Vu.png in Resources */,
 				91968A8918DC154200076DD8 /* botaoRanking.png in Resources */,
+				91102A7019A8780F00596E7A /* menuHighlight.png in Resources */,
 				D69E027118DA2C6000A3B976 /* p1.png in Resources */,
 				91B0861318E51CA50077C336 /* botaoMenu.png in Resources */,
 				91FD8F2519A5C14700ED9B17 /* rectVu.png in Resources */,
 				91D1F5A018DBD81B00F82100 /* botao.png in Resources */,
+				91102A7219A8780F00596E7A /* volumeMute.png in Resources */,
 				91D1F5A118DBD81B00F82100 /* botaoHighlight.png in Resources */,
 				91FD8F2419A5C14700ED9B17 /* botaoVuHighlight.png in Resources */,
 				D69E027318DA2CA000A3B976 /* rect2.png in Resources */,
@@ -489,6 +504,7 @@
 				91968A8418DBF9BF00076DD8 /* icon.png in Resources */,
 				D69E026F18DA2C6000A3B976 /* c2.png in Resources */,
 				91D1F59818DB72D000F82100 /* Jump.mp3 in Resources */,
+				91102A7119A8780F00596E7A /* volume.png in Resources */,
 				E69986EA18D234690026878B /* Main.storyboard in Resources */,
 				911E354619195C4200941842 /* launchR4.png in Resources */,
 				91D4988F18E36AE20015AEF1 /* Default.png in Resources */,

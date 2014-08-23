@@ -72,18 +72,18 @@
     //Carregando Imagens
     
         //Correndo
-    SKTexture *correndo1 = [SKTexture textureWithImageNamed:@"c1Vu"];
+    SKTexture *correndo1 = [SKTexture textureWithImageNamed:@"c1"];
     correndo1.filteringMode = SKTextureFilteringNearest;
     
-    SKTexture *correndo2 = [SKTexture textureWithImageNamed:@"c2Vu"];
+    SKTexture *correndo2 = [SKTexture textureWithImageNamed:@"c2"];
     correndo2.filteringMode = SKTextureFilteringNearest;
     
-    SKTexture *correndo3 = [SKTexture textureWithImageNamed:@"c3Vu"];
+    SKTexture *correndo3 = [SKTexture textureWithImageNamed:@"c3"];
     correndo3.filteringMode = SKTextureFilteringNearest;
     
     
         //Pulando
-    SKTexture *pulando1 = [SKTexture textureWithImageNamed:@"p1Vu"];
+    SKTexture *pulando1 = [SKTexture textureWithImageNamed:@"p1"];
     
     
     
@@ -108,7 +108,8 @@
         
         [self.personagem.physicsBody setVelocity:CGVectorMake(0, 0)];
         [self.personagem.physicsBody applyImpulse:CGVectorMake(25, forcaDoPulo+1)];
-        if (self.jogoRodando) {
+        if (self.jogoRodando && ![[NSUserDefaults standardUserDefaults]boolForKey:@"mutado"]) {
+            
             [self.personagem runAction:[SKAction playSoundFileNamed:@"Jump.mp3" waitForCompletion:NO]];
         }else{
             self.jogoRodando = YES;
