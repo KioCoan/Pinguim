@@ -35,7 +35,7 @@
         }else{
             [self.musica setVolume:0.8];
         }
-
+        
         [[self musica]prepareToPlay];
         [self.musica setNumberOfLoops:-1];
         
@@ -100,16 +100,16 @@
     }
     
     
-//    NSLog(@"%.2f", self.score/100);
-
+    //    NSLog(@"%.2f", self.score/100);
+    
     
 }
 
 -(BOOL)prefersStatusBarHidden{
     return YES;
-}
-
-- (void)updateWithTimeSinceLastUpdate:(CFTimeInterval)timeSinceLast
+    }
+    
+    - (void)updateWithTimeSinceLastUpdate:(CFTimeInterval)timeSinceLast
 {
     // Lógica de quando o jogador estiver jogando
     
@@ -153,13 +153,12 @@
             self.timer = 20;
             [[self floor] addFloor];
         }
-        self.lblScore.text = [NSString stringWithFormat:@"%.f", self.score];
-        self.lblScore.fontName = @"Helvetica Neue";
+        self.lblScore.text = [NSString stringWithFormat:@"Score: %.f", self.score];
     }
-}
-
-// Chamado antes de cada quadro ser renderizado
-- (void)update:(CFTimeInterval)currentTime
+    }
+    
+    // Chamado antes de cada quadro ser renderizado
+    - (void)update:(CFTimeInterval)currentTime
 {
     // Handle time delta.
     // If we drop below 60fps, we still want everything to move the same distance.
@@ -186,8 +185,7 @@
     
     self.lblScore = [[SKLabelNode alloc]init];
     self.lblScore.position = CGPointMake(self.size.width - 50, self.size.height - 50);
-    self.lblScore.text = [NSString stringWithFormat:@"%.f",self.score /100 ];
-    self.lblScore.fontName = @"Helvetica Neue";
+    self.lblScore.text = [NSString stringWithFormat:@"Score: %.f",self.score /100 ];
     self.lblScore.zPosition = 150;
     self.lblScore.fontSize = 15;
     //self.lblScore.fontName = @"Helvetica Neue";
@@ -197,7 +195,7 @@
     [self geraBotaoVolume];
     
     //Background
-    SKTexture *bg = [SKTexture textureWithImageNamed:@"bgGameplayVu"];
+    SKTexture *bg = [SKTexture textureWithImageNamed:@"bgmenor"];
     SKSpriteNode *nodeBg = [[SKSpriteNode alloc]initWithTexture:bg];
     nodeBg.size = CGSizeMake(self.frame.size.width, self.frame.size.height);
     nodeBg.position = CGPointMake(self.size.width / 2,self.size.height / 2);
@@ -219,7 +217,7 @@
     
     
     
-    SKTexture *textureFloor = [SKTexture textureWithImageNamed:@"rectVu"];
+    SKTexture *textureFloor = [SKTexture textureWithImageNamed:@"rect"];
     CGPoint initialPos = CGPointMake(190, 10);
     CGSize size = CGSizeMake(100, 100);
     
@@ -261,7 +259,7 @@
         self.jogoAtivo = NO;
         [self.physicsWorld removeAllJoints];
         
-     
+        
         [self mudaScene];
         
         //[self start];
@@ -300,9 +298,9 @@
     NSString* stringBotao = [[NSString alloc]init];
     
     if(mutado){
-       stringBotao = @"volumeMute.png";
+        stringBotao = @"volumeMute.png";
     }else{
-       stringBotao = @"volume.png";
+        stringBotao = @"volume.png";
     }
     
     SKTexture* iconeVolume = [SKTexture textureWithImageNamed:stringBotao];
@@ -316,7 +314,7 @@
 }
 
 -(void)mudaVolume:(SKSpriteNode*)botao{
-     BOOL mutado = [[NSUserDefaults standardUserDefaults]boolForKey:@"mutado"];
+    BOOL mutado = [[NSUserDefaults standardUserDefaults]boolForKey:@"mutado"];
     if (mutado) {
         [[NSUserDefaults standardUserDefaults]setBool:NO forKey:@"mutado"];
         botao.texture = [SKTexture textureWithImageNamed:@"volume"];
@@ -325,7 +323,7 @@
         [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"mutado"];
         botao.texture = [SKTexture textureWithImageNamed:@"volumeMute"];
         self.musica.volume = 0;
-
+        
     }
 }
 
