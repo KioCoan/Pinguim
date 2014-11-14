@@ -11,9 +11,14 @@
 #import <SpriteKit/SpriteKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import "WSwebservice.h"
+#import "GADInterstitial.h"
+#import "GADInterstitialDelegate.h"
 
+@interface ViewController : UIViewController <UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate,GADInterstitialDelegate>
 
-@interface ViewController : UIViewController <UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate>
+@property GADInterstitial * ad;
+@property int partidasJogadas;
+@property BOOL adLiberado;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgPinguim;
 @property (weak, nonatomic) IBOutlet UILabel *lblRecord;
@@ -43,6 +48,6 @@
 - (void)voltar;
 - (void)habilitarObjetos;
 -(void)desabilitaObjetos;
-
+-(void)showAd;
 
 @end

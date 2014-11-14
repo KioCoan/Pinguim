@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Reachability.h"
 
-@interface WSwebservice : NSObject
+@interface WSwebservice : NSObject <NSURLConnectionDelegate>
 {
     NSMutableArray *resultado;
     NSString *nomes,*scores;
@@ -19,7 +19,9 @@
 @property NSData* acesso;
 
 -(NSMutableArray*)getRanking;
+-(void)postRanking:(NSArray*)dados;
 -(void)SalvarRanking:(NSArray*)dados;
 
 -(int)geraToken:(int)score nome:(NSString*)nome;
+
 @end

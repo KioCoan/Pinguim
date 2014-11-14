@@ -49,6 +49,7 @@
     self.lblRanking = [[SKLabelNode alloc]init];
     self.lblRanking.fontSize = 12;
     self.lblRanking.position = CGPointMake(self.size.width / 2, (self.size.height / 2) - 20);
+    self.lblRanking.fontName = @"Helvetica Neue";
     
     
     
@@ -60,6 +61,7 @@
     //Mensagem Game Over
     SKLabelNode* gameOver = [[SKLabelNode alloc]init];
     gameOver.text = @"Game Over";
+    gameOver.fontName = @"Helvetica Neue";
     gameOver.position = CGPointMake(self.size.width / 2, self.frame.size.height - 70);
     [self addChild:gameOver];
     
@@ -67,7 +69,8 @@
     SKLabelNode* lblScore = [[SKLabelNode alloc]init];
     lblScore.text = [NSString stringWithFormat:@"%@: %.f",self.nome,self.score];
     lblScore.position = CGPointMake(self.size.width/2, self.frame.size.height - 130);
-        
+    lblScore.fontName = @"Helvetica Neue";
+    
     [self addChild:lblScore];
     
     Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
@@ -134,7 +137,7 @@
     //NSLog(@"Startou Thread");
     NSArray *arrayDados = [[NSArray alloc]initWithObjects:[self nome],[NSString stringWithFormat:@"%.f",self.score], nil];
     //NSLog(@"%@     %@",[arrayDados objectAtIndex:0],[arrayDados objectAtIndex:1]);
-    [self.ws SalvarRanking:arrayDados];
+    [self.ws postRanking:arrayDados];
     [self.myThread cancel];
 }
 

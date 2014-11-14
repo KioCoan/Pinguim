@@ -290,6 +290,8 @@
     // Create and configure the scene.
     SKScene * scene = [[Ranking alloc]initWithSize:self.view.bounds.size : self.nomeJogador : scoreValue];
     scene.scaleMode = SKSceneScaleModeAspectFill;
+    
+    [[ViewController sharedViewController]showAd];
     // Present the scene.
     [[ViewController sharedViewController].skView presentScene:scene];
 }

@@ -47,6 +47,17 @@
 
 -(void)viewDidLoad{
   
+    _adLiberado = NO;
+    //adstuff
+    _ad = [[GADInterstitial alloc]init];
+    _ad.adUnitID = @"ca-app-pub-1972944779905269/7379245630";
+    GADRequest* request = [[GADRequest alloc]init];
+    request.testDevices = [NSArray arrayWithObjects:GAD_SIMULATOR_ID, nil];
+    [_ad loadRequest:request];
+    _ad.delegate = self;
+    
+    
+    //gamestuff
     [[self txtNome]setDelegate:self];
     
     NSURL* urlMusica = [[NSURL alloc]initFileURLWithPath:[[NSBundle mainBundle] pathForResource:@"tgif" ofType:@"mp3"]];
@@ -65,6 +76,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardDidHideNotification object:nil];
 
     _rankingAberto = NO;
+    _partidasJogadas = 0;
 }
 
 
@@ -189,15 +201,16 @@
         
         if(!_rankingAberto){
         _listaRanking = [[WSwebservice alloc]getRanking];
-        _viewRanking = [[UIView alloc]initWithFrame:CGRectMake(self.view.frame.size.width / 2, -310, self.view.frame.size.width - 40, self.view.frame.size.height - 10)];
+        _viewRanking = [[UIView alloc]initWithFrame:CGRectMake(self.view.bounds.size.width * 0.25, -self.view.frame.size.height * 0.95, self.view.frame.size.width * 0.5, self.view.frame.size.height * 0.95)];
+            
         _viewRanking.backgroundColor = [UIColor blackColor];
         [[self view]addSubview:_viewRanking];
-        UIButton* fecharView = [[UIButton alloc] initWithFrame:CGRectMake(_viewRanking.frame.size.width / 2 - 25, 280, 60, 25)];
+        UIButton* fecharView = [[UIButton alloc] initWithFrame:CGRectMake(_viewRanking.frame.size.width / 2 - 25, 280, 60, 20)];
         [fecharView setTitle:@"Fechar" forState:UIControlStateNormal];
         [fecharView addTarget:self action:@selector(deletaView) forControlEvents:UIControlEventTouchUpInside];
         [_viewRanking addSubview:fecharView];
         //Monta ranking na tableview
-        CGRect frameDaTable = CGRectMake(12, 2, 255, 273);
+        CGRect frameDaTable = CGRectMake(12, 5, _viewRanking.bounds.size.width * 0.9, _viewRanking.bounds.size.height * 0.9);
         _tableView = [[UITableView alloc]initWithFrame:frameDaTable style:UITableViewStylePlain];
         _tableView.rowHeight = 25;
         _tableView.scrollEnabled = YES;
@@ -210,9 +223,7 @@
         [_viewRanking addSubview:_tableView];
         
         [UIView animateWithDuration:0.3 animations:^{
-            CGRect f = self.viewRanking.frame;
-            f.origin.y = 5.0f;
-            self.viewRanking.frame = f;
+            _viewRanking.center = [self.view convertPoint:self.view.center fromView:self.view.superview];
         }];
             _rankingAberto = YES;
        }
@@ -282,4 +293,32 @@
     self.lblRecord.text = recordLocal;
 }
 
+- (void)interstitialDidReceiveAd:(GADInterstitial *)interstitial{
+    _adLiberado = YES;
+}
+
+-(void)interstitial:(GADInterstitial *)ad didFailToReceiveAdWithError:(GADRequestError *)error{
+   // NSLog(@"deu pau no ad");
+    _adLiberado = NO;
+}
+
+-(void)interstitialDidDismissScreen:(GADInterstitial *)ad{
+    _ad = [[GADInterstitial alloc]init];
+    _ad.adUnitID = @"ca-app-pub-1972944779905269/7379245630";
+    GADRequest* request = [[GADRequest alloc]init];
+    request.testDevices = [NSArray arrayWithObjects:GAD_SIMULATOR_ID, nil];
+    [_ad loadRequest:request];
+    _ad.delegate = self;
+}
+
+-(void)showAd{
+    if(_adLiberado){
+        if(_partidasJogadas == 3){
+            _partidasJogadas = 0;
+            [_ad presentFromRootViewController:self];
+        }else{
+            _partidasJogadas++;
+        }
+    }
+}
 @end

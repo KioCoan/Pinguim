@@ -15,7 +15,7 @@
 
 -(NSMutableArray *)getRanking{
     NSData* jsonDados = [[NSData alloc] initWithContentsOfURL:
-                         [NSURL URLWithString:@"http://www.420blazeitswag.com/wsGame/functions.php?funcao=getRanking"]];
+                         [NSURL URLWithString:@"http://www.caiocoan.com/wsPepes/listarPlayers.php"]];
     NSError *error;
     NSMutableDictionary *jsonRanking = [NSJSONSerialization
                                         JSONObjectWithData:jsonDados
@@ -33,6 +33,31 @@
     return [self resultado];
 }
 
+-(void)postRanking:(NSArray *)dados{
+    
+    NSString *nome,*score,*token,*post;
+    nome = [dados objectAtIndex:0];
+    score = [dados objectAtIndex:1];
+    token = [NSString stringWithFormat:@"%d",[self geraToken:score.intValue nome:nome]];
+    
+    //www.caiocoan.com/wsPepes/ranking.php
+    post = [NSString stringWithFormat:@"nome=%@&score=%@&token=%@",nome,score,token];
+    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    NSString* postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[post length]];
+    NSMutableURLRequest* request = [[NSMutableURLRequest alloc]init];
+    request.URL = [NSURL URLWithString:@"http://www.caiocoan.com/wsPepes/ranking.php"];
+    request.HTTPMethod = @"POST";
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:postData];
+    
+    NSURLConnection* conn = [[NSURLConnection alloc]initWithRequest:request delegate:self];
+    
+    conn ? NSLog(@"Postou") : NSLog(@"Nop");
+
+    
+}
+
 -(void)SalvarRanking:(NSArray *)dados{
     NSString* nome,*score,*token;
     nome = [dados objectAtIndex:0];
@@ -46,10 +71,15 @@
     //NSLog(@"Terminou salvar ranking");
 }
 
+-(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
+    NSLog(@"Erro na conexão: %ld", (long)error.code);
+}
+
 -(int)geraToken:(int)score nome:(NSString *)nome{
     int chars = (int)[nome length];
     chars *= 3;
     int token = chars + (score * 2);
     return token;
 }
+
 @end

@@ -14,11 +14,7 @@
 -(id)init
 {
     return [self initWithTexture:nil andPosition:CGPointMake(0, 0) andSize:CGSizeMake(0, 0)];
-    
-    
-    
-    
-    
+
    // NSLog(@"Inicializando com textura NULA e sem nenhum parametro");
 }
 
@@ -51,10 +47,6 @@
         //        dummy.physicsBody.dynamic = NO;
         //        dummy.physicsBody.categoryBitMask = bitDummy;
 
-        
-
-
-        
         //Cria os primeiros pedaços do chão
         [self createBasicFloors];
     }
