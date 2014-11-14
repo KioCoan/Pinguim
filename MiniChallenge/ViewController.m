@@ -46,7 +46,6 @@
 }
 
 -(void)viewDidLoad{
-  
     _adLiberado = NO;
     //adstuff
     _ad = [[GADInterstitial alloc]init];
@@ -55,11 +54,8 @@
     request.testDevices = [NSArray arrayWithObjects:GAD_SIMULATOR_ID, nil];
     [_ad loadRequest:request];
     _ad.delegate = self;
-    
-    
     //gamestuff
     [[self txtNome]setDelegate:self];
-    
     NSURL* urlMusica = [[NSURL alloc]initFileURLWithPath:[[NSBundle mainBundle] pathForResource:@"tgif" ofType:@"mp3"]];
     _musicaInicio = [[AVAudioPlayer alloc]initWithContentsOfURL:urlMusica error:nil];
     if([[NSUserDefaults standardUserDefaults]boolForKey:@"mutado"]){
@@ -67,14 +63,11 @@
     }else{
         [_musicaInicio setVolume:0.8];
     }
-    
     [_musicaInicio setNumberOfLoops:-1];
     [_musicaInicio prepareToPlay];
     [_musicaInicio play];
-
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardDidHideNotification object:nil];
-
     _rankingAberto = NO;
     _partidasJogadas = 0;
 }
@@ -131,20 +124,15 @@
 }
 
 - (IBAction)iniciaGame:(UIButton *)sender {
-    
     [self desabilitaObjetos];
-    
     self.skView = (SKView *)self.view;
     _skView.showsFPS = NO;
     _skView.showsNodeCount = NO;
     // Create and configure the scene.
-    
     SKScene * scene = [[EmJogo alloc]initWithSize:self.skView.bounds.size :self.txtNome.text ];
     scene.scaleMode = SKSceneScaleModeAspectFill;
-    
     // Present the scene.
     [_skView presentScene:scene];
-
 }
 - (void)voltar
 {
@@ -186,8 +174,6 @@
 }
 
 - (IBAction)abreRanking:(id)sender {
-    
-    
     Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
     NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
     if (networkStatus == NotReachable) {
@@ -198,7 +184,6 @@
                                               otherButtonTitles:nil];
         [alert show];
     } else {
-        
         if(!_rankingAberto){
         _listaRanking = [[WSwebservice alloc]getRanking];
         _viewRanking = [[UIView alloc]initWithFrame:CGRectMake(self.view.bounds.size.width * 0.25, -self.view.frame.size.height * 0.95, self.view.frame.size.width * 0.5, self.view.frame.size.height * 0.95)];
@@ -247,9 +232,7 @@
         f.origin.y = -f.size.height;
         self.viewRanking.frame = f;
     }];
-    
     [self performSelector:@selector(confirmaDeletar) withObject:nil afterDelay:1];
-   
 }
 
 -(void)confirmaDeletar{

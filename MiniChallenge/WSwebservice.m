@@ -34,12 +34,10 @@
 }
 
 -(void)postRanking:(NSArray *)dados{
-    
     NSString *nome,*score,*token,*post;
     nome = [dados objectAtIndex:0];
     score = [dados objectAtIndex:1];
     token = [NSString stringWithFormat:@"%d",[self geraToken:score.intValue nome:nome]];
-    
     //www.caiocoan.com/wsPepes/ranking.php
     post = [NSString stringWithFormat:@"nome=%@&score=%@&token=%@",nome,score,token];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
@@ -50,12 +48,8 @@
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:postData];
-    
-    NSURLConnection* conn = [[NSURLConnection alloc]initWithRequest:request delegate:self];
-    
-    conn ? NSLog(@"Postou") : NSLog(@"Nop");
-
-    
+    //NSURLConnection* conn = [[NSURLConnection alloc]initWithRequest:request delegate:self];
+    //conn ? NSLog(@"Postou") : NSLog(@"Nop");
 }
 
 -(void)SalvarRanking:(NSArray *)dados{
