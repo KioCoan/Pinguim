@@ -66,7 +66,7 @@
 }
 
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
-    NSLog(@"Erro na conexão: %ld", (long)error.code);
+    //NSLog(@"Erro na conexão: %ld", (long)error.code);
 }
 
 -(int)geraToken:(int)score nome:(NSString *)nome{

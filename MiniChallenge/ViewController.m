@@ -51,7 +51,7 @@
     _ad = [[GADInterstitial alloc]init];
     _ad.adUnitID = @"ca-app-pub-1972944779905269/7379245630";
     GADRequest* request = [[GADRequest alloc]init];
-    request.testDevices = [NSArray arrayWithObjects:GAD_SIMULATOR_ID, nil];
+    //request.testDevices = [NSArray arrayWithObjects:GAD_SIMULATOR_ID, nil];
     [_ad loadRequest:request];
     _ad.delegate = self;
     //gamestuff
