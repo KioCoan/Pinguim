@@ -11,9 +11,6 @@
 @implementation Nuvem
 
 -(id)init{
-    
-    NSLog(@"test");
-    
     self = [super init];
     self.direcao = arc4random_uniform(2);
     [self geraPosicao];
@@ -22,13 +19,11 @@
     sprite.size = CGSizeMake(sprite.size.width * 0.5, sprite.size.height * 0.5);
     sprite.alpha = 0.8;
     [self addChild:sprite];
-    
     return self;
 }
 
 -(void)geraTextura{
     int rand = arc4random_uniform(3);
-    
     switch (rand) {
         case 0:
             self.textura = [SKTexture textureWithImageNamed:@"nuvem1"];
@@ -65,12 +60,10 @@
 -(int)altura{
     int minAlt = 200;
     int maxAlt = 320;
-    
     int randAlt = 0;
     do{
         randAlt = arc4random_uniform(maxAlt + 1);
     }while(randAlt < minAlt);
-    
     return randAlt;
 }
 
@@ -78,22 +71,16 @@
     int posMin = 0;
     int posMax = 0;
     int randPos = 0;
-    
     if (self.direcao == DIREITA) {
         posMax = 200;
         posMin = 0;
-        
-        
         return randPos = arc4random_uniform(posMax);
-        
     }else{
         posMax = 500;
         posMin = 400;
-        
         do{
             randPos = arc4random_uniform(posMax);
         }while (randPos < posMin);
-        
         return randPos;
     }
 }
