@@ -12,6 +12,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "Ranking.h"
 #import "ViewController.h"
+#import "Nuvem.h"
 
 @interface EmJogo : SKScene <SKPhysicsContactDelegate>
 
@@ -29,6 +30,8 @@
 @property double timer;
 @property (nonatomic) NSTimeInterval lastUpdateTimeInterval;
 @property NSString* nomeJogador;
+
+@property int qNuvens;
 
 -(id)initWithSize:(CGSize)size : (NSString*)nome;
 

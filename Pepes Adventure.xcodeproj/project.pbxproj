@@ -14,6 +14,7 @@
 		712979BC1A1641260059FAA1 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712979BB1A1641260059FAA1 /* MessageUI.framework */; };
 		712979BE1A1641300059FAA1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712979BD1A1641300059FAA1 /* StoreKit.framework */; };
 		712979C01A16413C0059FAA1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712979BF1A16413C0059FAA1 /* SystemConfiguration.framework */; };
+		910A85501A195DF6002C3647 /* Nuvem.m in Sources */ = {isa = PBXBuildFile; fileRef = 910A854F1A195DF6002C3647 /* Nuvem.m */; };
 		91102A6F19A8780F00596E7A /* menuBotao.png in Resources */ = {isa = PBXBuildFile; fileRef = 91102A6B19A8780F00596E7A /* menuBotao.png */; };
 		91102A7019A8780F00596E7A /* menuHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 91102A6C19A8780F00596E7A /* menuHighlight.png */; };
 		91102A7119A8780F00596E7A /* volume.png in Resources */ = {isa = PBXBuildFile; fileRef = 91102A6D19A8780F00596E7A /* volume.png */; };
@@ -22,6 +23,9 @@
 		911E354719195C4200941842 /* launchx2.png in Resources */ = {isa = PBXBuildFile; fileRef = 911E354519195C4200941842 /* launchx2.png */; };
 		91256F7C18E6A9A300E0E1A6 /* icon58.png in Resources */ = {isa = PBXBuildFile; fileRef = 91256F7A18E6A9A300E0E1A6 /* icon58.png */; };
 		91256F7D18E6A9A300E0E1A6 /* icon80.png in Resources */ = {isa = PBXBuildFile; fileRef = 91256F7B18E6A9A300E0E1A6 /* icon80.png */; };
+		912BC0B51A197B49001A6B5D /* nuvem1.png in Resources */ = {isa = PBXBuildFile; fileRef = 912BC0B21A197B49001A6B5D /* nuvem1.png */; };
+		912BC0B61A197B49001A6B5D /* nuvem2.png in Resources */ = {isa = PBXBuildFile; fileRef = 912BC0B31A197B49001A6B5D /* nuvem2.png */; };
+		912BC0B71A197B49001A6B5D /* nuvem3.png in Resources */ = {isa = PBXBuildFile; fileRef = 912BC0B41A197B49001A6B5D /* nuvem3.png */; };
 		916A200119217D4D005D8766 /* replaybutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 916A200019217D4D005D8766 /* replaybutton.png */; };
 		91968A8218DBF9BF00076DD8 /* icon120.png in Resources */ = {isa = PBXBuildFile; fileRef = 91968A7F18DBF9BF00076DD8 /* icon120.png */; };
 		91968A8318DBF9BF00076DD8 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91968A8018DBF9BF00076DD8 /* icon@2x.png */; };
@@ -109,6 +113,8 @@
 		712979BB1A1641260059FAA1 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		712979BD1A1641300059FAA1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		712979BF1A16413C0059FAA1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		910A854E1A195DF6002C3647 /* Nuvem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Nuvem.h; sourceTree = "<group>"; };
+		910A854F1A195DF6002C3647 /* Nuvem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Nuvem.m; sourceTree = "<group>"; };
 		91102A6B19A8780F00596E7A /* menuBotao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuBotao.png; sourceTree = "<group>"; };
 		91102A6C19A8780F00596E7A /* menuHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuHighlight.png; sourceTree = "<group>"; };
 		91102A6D19A8780F00596E7A /* volume.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volume.png; sourceTree = "<group>"; };
@@ -117,6 +123,9 @@
 		911E354519195C4200941842 /* launchx2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchx2.png; sourceTree = "<group>"; };
 		91256F7A18E6A9A300E0E1A6 /* icon58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon58.png; sourceTree = "<group>"; };
 		91256F7B18E6A9A300E0E1A6 /* icon80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon80.png; sourceTree = "<group>"; };
+		912BC0B21A197B49001A6B5D /* nuvem1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nuvem1.png; sourceTree = "<group>"; };
+		912BC0B31A197B49001A6B5D /* nuvem2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nuvem2.png; sourceTree = "<group>"; };
+		912BC0B41A197B49001A6B5D /* nuvem3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nuvem3.png; sourceTree = "<group>"; };
 		916A200019217D4D005D8766 /* replaybutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = replaybutton.png; sourceTree = "<group>"; };
 		91968A7F18DBF9BF00076DD8 /* icon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon120.png; sourceTree = "<group>"; };
 		91968A8018DBF9BF00076DD8 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
@@ -241,6 +250,17 @@
 			name = GoogleAds;
 			sourceTree = "<group>";
 		};
+		910A854D1A195DB8002C3647 /* WS */ = {
+			isa = PBXGroup;
+			children = (
+				91968A8C18DC2A9200076DD8 /* Reachability.h */,
+				91968A8D18DC2A9200076DD8 /* Reachability.m */,
+				91968A8618DBFBCA00076DD8 /* WSwebservice.h */,
+				91968A8518DBFBCA00076DD8 /* WSwebservice.m */,
+			);
+			name = WS;
+			sourceTree = "<group>";
+		};
 		911E354319195C3000941842 /* Launch Image */ = {
 			isa = PBXGroup;
 			children = (
@@ -320,6 +340,9 @@
 		D643B83718D788A90033AFA6 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				912BC0B21A197B49001A6B5D /* nuvem1.png */,
+				912BC0B31A197B49001A6B5D /* nuvem2.png */,
+				912BC0B41A197B49001A6B5D /* nuvem3.png */,
 				916A200019217D4D005D8766 /* replaybutton.png */,
 				911E354319195C3000941842 /* Launch Image */,
 				91B0861218E51CA50077C336 /* botaoMenu.png */,
@@ -385,10 +408,7 @@
 			children = (
 				712979A61A16409A0059FAA1 /* GoogleAds */,
 				91FD8F1219A5C0B800ED9B17 /* imagensVU */,
-				91968A8C18DC2A9200076DD8 /* Reachability.h */,
-				91968A8D18DC2A9200076DD8 /* Reachability.m */,
-				91968A8618DBFBCA00076DD8 /* WSwebservice.h */,
-				91968A8518DBFBCA00076DD8 /* WSwebservice.m */,
+				910A854D1A195DB8002C3647 /* WS */,
 				91D1F58A18DA65D800F82100 /* Sons */,
 				D643B83718D788A90033AFA6 /* Imagens */,
 				E69986E518D234690026878B /* AppDelegate.h */,
@@ -404,6 +424,8 @@
 				E699871918D241830026878B /* Personagem.m */,
 				91D1F59918DBA14500F82100 /* Ranking.h */,
 				91D1F59A18DBA14500F82100 /* Ranking.m */,
+				910A854E1A195DF6002C3647 /* Nuvem.h */,
+				910A854F1A195DF6002C3647 /* Nuvem.m */,
 				E69986F318D234690026878B /* Images.xcassets */,
 				91968A7E18DBF9A900076DD8 /* icons */,
 				E69986DD18D234690026878B /* Supporting Files */,
@@ -527,6 +549,7 @@
 				911E354719195C4200941842 /* launchx2.png in Resources */,
 				91256F7D18E6A9A300E0E1A6 /* icon80.png in Resources */,
 				712979B61A1640B80059FAA1 /* README.txt in Resources */,
+				912BC0B51A197B49001A6B5D /* nuvem1.png in Resources */,
 				91102A6F19A8780F00596E7A /* menuBotao.png in Resources */,
 				91FD8F2619A5C14700ED9B17 /* c1Vu.png in Resources */,
 				91FD8F2719A5C14700ED9B17 /* c2Vu.png in Resources */,
@@ -534,6 +557,7 @@
 				91102A7019A8780F00596E7A /* menuHighlight.png in Resources */,
 				D69E027118DA2C6000A3B976 /* p1.png in Resources */,
 				91B0861318E51CA50077C336 /* botaoMenu.png in Resources */,
+				912BC0B71A197B49001A6B5D /* nuvem3.png in Resources */,
 				91FD8F2519A5C14700ED9B17 /* rectVu.png in Resources */,
 				91D1F5A018DBD81B00F82100 /* botao.png in Resources */,
 				91102A7219A8780F00596E7A /* volumeMute.png in Resources */,
@@ -567,6 +591,7 @@
 				E69986EA18D234690026878B /* Main.storyboard in Resources */,
 				911E354619195C4200941842 /* launchR4.png in Resources */,
 				91D4988F18E36AE20015AEF1 /* Default.png in Resources */,
+				912BC0B61A197B49001A6B5D /* nuvem2.png in Resources */,
 				91256F7C18E6A9A300E0E1A6 /* icon58.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -587,6 +612,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E69986F018D234690026878B /* EmJogo.m in Sources */,
+				910A85501A195DF6002C3647 /* Nuvem.m in Sources */,
 				E699871A18D241830026878B /* Personagem.m in Sources */,
 				91968A8718DBFBCA00076DD8 /* WSwebservice.m in Sources */,
 				D62B2CB918D78F830021795A /* SKInfinityLevelNode.m in Sources */,

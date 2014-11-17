@@ -79,6 +79,13 @@
 
 - (void)updateWithTimeSinceLastUpdate:(CFTimeInterval)timeSinceLast
 {
+    if (self.qNuvens < 2) {
+        Nuvem *nuvem = [[Nuvem alloc]init];
+        [self addChild:nuvem];
+        [nuvem movimentar];
+        self.qNuvens++;
+        nuvem.zPosition = 1;
+    }
     // Lógica de quando o jogador estiver jogando
     // Lógica para criar o chao
     [self verificaMorte];
@@ -138,11 +145,11 @@
     self.querdaInicial = YES;
     //Posiciona lblScore
     self.lblScore = [[SKLabelNode alloc]init];
-    self.lblScore.position = CGPointMake(self.size.width - 50, self.size.height - 50);
-    self.lblScore.text = [NSString stringWithFormat:@"%.f",self.score /100 ];
+    self.lblScore.position = CGPointMake(self.size.width * 0.9, self.size.height * 0.85);
+    self.lblScore.text = [NSString stringWithFormat:@"%.f",self.score / 100 ];
     self.lblScore.fontName = @"Helvetica Neue";
     self.lblScore.zPosition = 150;
-    self.lblScore.fontSize = 15;
+    self.lblScore.fontSize = 32;
     //self.lblScore.fontName = @"Helvetica Neue";
     [self addChild:self.lblScore];
     //Botão de mutar
@@ -164,6 +171,7 @@
     CGSize size = CGSizeMake(100, 100);
     [self setFloor:[[SKInfinityLevelNode alloc] initWithTexture:textureFloor andPosition:initialPos andSize:size]];
     [self addChild:[self floor]];
+    [self floor].zPosition = 2;
     uint32_t bitInimigo = 1 << 2;
     //        uint32_t bitDummy = 1 << 1;
     SKSpriteNode* dummy = [[SKSpriteNode alloc] init];
