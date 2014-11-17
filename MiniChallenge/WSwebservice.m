@@ -14,6 +14,11 @@
 @synthesize resultado,nomes,scores;
 
 -(NSMutableArray *)getRanking{
+    
+    if (![self conexaoDisponivel]) {
+        return [[NSMutableArray alloc]init];;
+    }
+    
     NSData* jsonDados = [[NSData alloc] initWithContentsOfURL:
                          [NSURL URLWithString:@"http://www.caiocoan.com/wsPepes/listarPlayers.php"]];
     NSError *error;
@@ -34,6 +39,11 @@
 }
 
 -(void)postRanking:(NSArray *)dados{
+    
+    if (![self conexaoDisponivel]) {
+        return;
+    }
+    
     NSString *nome,*score,*token,*post;
     nome = [dados objectAtIndex:0];
     score = [dados objectAtIndex:1];
@@ -53,6 +63,11 @@
 }
 
 -(void)SalvarRanking:(NSArray *)dados{
+    
+    if (![self conexaoDisponivel]) {
+        return;
+    }
+    
     NSString* nome,*score,*token;
     nome = [dados objectAtIndex:0];
     score = [dados objectAtIndex:1];
@@ -75,5 +90,17 @@
     int token = chars + (score * 2);
     return token;
 }
+
+-(BOOL)conexaoDisponivel{
+    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus internetStatus = [reachability currentReachabilityStatus];
+    if (internetStatus != NotReachable) {
+        return YES;
+    }
+    else {
+        return NO;
+    }
+}
+
 
 @end

@@ -23,5 +23,6 @@
 -(void)SalvarRanking:(NSArray*)dados;
 
 -(int)geraToken:(int)score nome:(NSString*)nome;
+-(BOOL)conexaoDisponivel;
 
 @end

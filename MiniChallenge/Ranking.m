@@ -73,21 +73,10 @@
     
     [self addChild:lblScore];
     
-    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
-    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
-    if (networkStatus == NotReachable) {
-       // NSLog(@"There IS NO internet connection");
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@":("
-                                                        message:@"Não há conexão com a internet, a pontuação não foi enviada"
-                                                       delegate:self
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-    } else {
-       // NSLog(@"There IS internet connection");
-        self.myThread = [[NSThread alloc]initWithTarget:self selector:@selector(startThread) object:nil];
-        [self.myThread start];
-    }
+    // NSLog(@"There IS internet connection");
+    self.myThread = [[NSThread alloc]initWithTarget:self selector:@selector(startThread) object:nil];
+    [self.myThread start];
+    
 }
 
 -(instancetype)initWithSize:(CGSize)size : (NSString*)nome : (float)score{

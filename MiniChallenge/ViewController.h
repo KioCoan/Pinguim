@@ -35,6 +35,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtNome;
 @property (weak, nonatomic) IBOutlet UIButton *btnRanking;
 @property (weak, nonatomic) IBOutlet UIButton *btnPlay;
+@property (weak, nonatomic) IBOutlet UIButton *btnRemoveAds;
 @property AVAudioPlayer* musicaInicio;
 
 //ranking stuff

@@ -165,6 +165,7 @@
     self.btnPlay.alpha = 0;
     self.lblRecord.alpha = 0;
     self.imgPinguim.alpha = 0;
+    self.btnRemoveAds.alpha = 0;
 }
 
 -(void)habilitarObjetos
@@ -176,6 +177,7 @@
     self.btnPlay.alpha = 1;
     self.lblRecord.alpha = 1;
     self.imgPinguim.alpha = 0.09;
+    self.btnRemoveAds.alpha = 1;
 }
 
 - (IBAction)abreRanking:(id)sender {
@@ -346,7 +348,7 @@
 -(void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response{
     SKProduct *validProduct = nil;
     NSInteger count = [response.products count];
-    if (count < 0){
+    if (count >= 1){
         {
             validProduct = [[response products]objectAtIndex:0];
             NSLog(@"Produtos disponiveis");
@@ -381,7 +383,6 @@
         }
         
     }
-    
 }
 
 - (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions{
@@ -408,6 +409,8 @@
                     //the user cancelled the payment ;(
                 }
                 [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+                break;
+            default:
                 break;
         }
     }

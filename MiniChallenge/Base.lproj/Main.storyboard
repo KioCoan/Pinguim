@@ -79,6 +79,7 @@
                     <connections>
                         <outlet property="btnPlay" destination="h7h-Dg-j4I" id="hte-Wn-N3D"/>
                         <outlet property="btnRanking" destination="aGr-81-mu5" id="GFo-VG-Vef"/>
+                        <outlet property="btnRemoveAds" destination="Dxv-vc-QJ8" id="yIL-Tx-ENC"/>
                         <outlet property="imgFundo" destination="kdo-TH-Ex2" id="LvK-Y1-AAW"/>
                         <outlet property="imgPinguim" destination="ixQ-He-I3g" id="Ee1-2U-EoF"/>
                         <outlet property="lblNome" destination="dk9-GA-MBl" id="lVx-Lo-byC"/>
