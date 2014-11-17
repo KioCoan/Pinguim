@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Esdras Martins. All rights reserved.
 //
 
+#define kRemoveAdsProductIdentifier @"noAdsPepes"
+
 #import "ViewController.h"
 #import "EmJogo.h"
 
@@ -70,6 +72,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardDidHideNotification object:nil];
     _rankingAberto = NO;
     _partidasJogadas = 0;
+    
+    _areAdsRemoved = [[NSUserDefaults standardUserDefaults]boolForKey:@"areAdsRemoved"];
+    
 }
 
 
@@ -89,7 +94,7 @@
 {
     [UIView animateWithDuration:0.3 animations:^{
         CGRect f = self.view.frame;
-        f.origin.x = -35.0f;  //set the -35.0f to your required value
+        f.origin.y = -35.0f;  //set the -35.0f to your required value
         self.view.frame = f;
     }];
 }
@@ -98,7 +103,7 @@
 {
     [UIView animateWithDuration:0.3 animations:^{
         CGRect f = self.view.frame;
-        f.origin.x = 0.0f;
+        f.origin.y = 0.0f;
         self.view.frame = f;
     }];
 }
@@ -304,4 +309,114 @@
         }
     }
 }
+
+- (IBAction)removerAds:(id)sender {
+    UIActionSheet *ac = [[UIActionSheet alloc] initWithTitle:@"Remover Ads" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Remover Ads",@"Restaurar Compra", nil];
+    ac.tag = 1;
+    [ac showInView:[UIApplication sharedApplication].keyWindow];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    switch (actionSheet.tag) {
+        case 1:
+            switch (buttonIndex) {
+                case 0:
+                    NSLog(@"Comprar");
+                    if ([SKPaymentQueue canMakePayments]) {
+                        SKProductsRequest* request = [[SKProductsRequest alloc]initWithProductIdentifiers:[NSSet setWithObject:kRemoveAdsProductIdentifier]];
+                        request.delegate = self;
+                        [request start];
+                    }else{
+                        NSLog(@"Não pode fazer compras");
+                    }
+                    break;
+                case 1:
+                    NSLog(@"refound");
+                    break;
+                default:
+                    break;
+            }
+            break;
+            
+        default:
+            break;
+    }
+}
+
+-(void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response{
+    SKProduct *validProduct = nil;
+    NSInteger count = [response.products count];
+    if (count < 0){
+        {
+            validProduct = [[response products]objectAtIndex:0];
+            NSLog(@"Produtos disponiveis");
+            [self purchase:validProduct];
+        }
+    }else if (!validProduct){
+        NSLog(@"Sem produtos disponíveis");
+    }
+}
+
+-(void)purchase:(SKProduct*)product{
+    SKPayment* payment = [SKPayment paymentWithProduct:product];
+    [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
+    [[SKPaymentQueue defaultQueue] addPayment:payment];
+}
+
+- (void)restore{
+    [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
+}
+
+- (void) paymentQueueRestoreCompletedTransactionsFinished:(SKPaymentQueue *)queue
+{
+    NSLog(@"received restored transactions: %lu", (unsigned long)queue.transactions.count);
+    for (SKPaymentTransaction *transaction in queue.transactions)
+    {
+        if(SKPaymentTransactionStateRestored){
+            NSLog(@"Transaction state -> Restored");
+            //called when the user successfully restores a purchase
+            [self doRemoveAds];
+            [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+            break;
+        }
+        
+    }
+    
+}
+
+- (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions{
+    for(SKPaymentTransaction *transaction in transactions){
+        switch (transaction.transactionState){
+            case SKPaymentTransactionStatePurchasing: NSLog(@"Transaction state -> Purchasing");
+                //called when the user is in the process of purchasing, do not add any of your own code here.
+                break;
+            case SKPaymentTransactionStatePurchased:
+                //this is called when the user has successfully purchased the package (Cha-Ching!)
+                [self doRemoveAds]; //you can add your code for what you want to happen when the user buys the purchase here, for this tutorial we use removing ads
+                [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+                NSLog(@"Transaction state -> Purchased");
+                break;
+            case SKPaymentTransactionStateRestored:
+                NSLog(@"Transaction state -> Restored");
+                //add the same code as you did from SKPaymentTransactionStatePurchased here
+                [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+                break;
+            case SKPaymentTransactionStateFailed:
+                //called when the transaction does not finnish
+                if(transaction.error.code != SKErrorPaymentCancelled){
+                    NSLog(@"Transaction state -> Cancelled");
+                    //the user cancelled the payment ;(
+                }
+                [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+                break;
+        }
+    }
+}
+
+- (void) doRemoveAds{
+    _areAdsRemoved = YES;
+    [[NSUserDefaults standardUserDefaults] setBool:_areAdsRemoved forKey:@"areAdsRemoved"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 @end

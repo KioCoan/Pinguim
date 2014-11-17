@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71234D091A1A1A1100B024F0 /* storeBg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 71234D081A1A1A1100B024F0 /* storeBg.jpg */; };
 		712979B51A1640B80059FAA1 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 712979B31A1640B80059FAA1 /* libGoogleAdMobAds.a */; };
 		712979B61A1640B80059FAA1 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 712979B41A1640B80059FAA1 /* README.txt */; };
 		712979B81A1641010059FAA1 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712979B71A1641010059FAA1 /* AdSupport.framework */; };
@@ -94,6 +95,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		71234D081A1A1A1100B024F0 /* storeBg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = storeBg.jpg; sourceTree = "<group>"; };
 		712979A71A1640B80059FAA1 /* GADAdMobExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADAdMobExtras.h; path = GoogleMobileAds/GADAdMobExtras.h; sourceTree = SOURCE_ROOT; };
 		712979A81A1640B80059FAA1 /* GADAdNetworkExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADAdNetworkExtras.h; path = GoogleMobileAds/GADAdNetworkExtras.h; sourceTree = SOURCE_ROOT; };
 		712979A91A1640B80059FAA1 /* GADAdSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADAdSize.h; path = GoogleMobileAds/GADAdSize.h; sourceTree = SOURCE_ROOT; };
@@ -200,8 +202,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				712979C01A16413C0059FAA1 /* SystemConfiguration.framework in Frameworks */,
 				712979BE1A1641300059FAA1 /* StoreKit.framework in Frameworks */,
+				712979C01A16413C0059FAA1 /* SystemConfiguration.framework in Frameworks */,
 				712979BC1A1641260059FAA1 /* MessageUI.framework in Frameworks */,
 				E69986D718D234690026878B /* CoreGraphics.framework in Frameworks */,
 				91D1F58718DA635A00F82100 /* AVFoundation.framework in Frameworks */,
@@ -340,6 +342,7 @@
 		D643B83718D788A90033AFA6 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				71234D081A1A1A1100B024F0 /* storeBg.jpg */,
 				912BC0B21A197B49001A6B5D /* nuvem1.png */,
 				912BC0B31A197B49001A6B5D /* nuvem2.png */,
 				912BC0B41A197B49001A6B5D /* nuvem3.png */,
@@ -564,6 +567,7 @@
 				91D1F5A118DBD81B00F82100 /* botaoHighlight.png in Resources */,
 				91FD8F2419A5C14700ED9B17 /* botaoVuHighlight.png in Resources */,
 				D69E027318DA2CA000A3B976 /* rect2.png in Resources */,
+				71234D091A1A1A1100B024F0 /* storeBg.jpg in Resources */,
 				91FD8F2819A5C14700ED9B17 /* c3Vu.png in Resources */,
 				91D4989118E36C4B0015AEF1 /* Default_iOS7-568h@2x.png in Resources */,
 				D69E027518DA31C400A3B976 /* rect.png in Resources */,

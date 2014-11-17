@@ -14,11 +14,13 @@
 #import "GADInterstitial.h"
 #import "GADInterstitialDelegate.h"
 
-@interface ViewController : UIViewController <UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate,GADInterstitialDelegate>
+@interface ViewController : UIViewController <UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate,GADInterstitialDelegate, UIActionSheetDelegate, SKProductsRequestDelegate, SKPaymentTransactionObserver>
 
 @property GADInterstitial * ad;
 @property int partidasJogadas;
 @property BOOL adLiberado;
+
+@property BOOL areAdsRemoved;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgPinguim;
 @property (weak, nonatomic) IBOutlet UILabel *lblRecord;
@@ -49,5 +51,6 @@
 - (void)habilitarObjetos;
 -(void)desabilitaObjetos;
 -(void)showAd;
+- (IBAction)removerAds:(id)sender;
 
 @end
