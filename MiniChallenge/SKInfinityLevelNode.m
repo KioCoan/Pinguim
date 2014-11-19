@@ -88,7 +88,7 @@
     //Define o tamanho dos pedaços
     [new setScale:0.09];
     //[colisao setSize:CGSizeMake(new.size.width-20, new.size.height*0.2)];
-    [colisao setPosition:CGPointMake(0, new.size.height * 2.9) ];
+    [colisao setPosition:CGPointMake(0, new.size.height * 3.4) ];
     //Define a física do novo chão
    // new.physicsBody =[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(new.size.width, new.size.height /2)];
    // new.physicsBody.categoryBitMask = 1 << 3;

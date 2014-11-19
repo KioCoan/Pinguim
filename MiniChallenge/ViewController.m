@@ -469,7 +469,7 @@
 
 -(void)iniciaBanner{
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"areAdsRemoved"]) {
-        _iadBanner = [[ADBannerView alloc]initWithFrame:CGRectMake(self.view.bounds.size.width * 0.38, -50, 320, 50)];
+        _iadBanner = [[ADBannerView alloc]initWithFrame:CGRectMake(self.view.bounds.size.width * 0.20, -50, 320, 50)];
         _iadBanner.delegate = self;
     }
 }
@@ -484,6 +484,11 @@
             _bannerVisivel = YES;
         }
     }
+}
+
+-(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error{
+    _bannerVisivel = NO;
+    _iadBanner = nil;
 }
 
 -(void)escondeBanner{

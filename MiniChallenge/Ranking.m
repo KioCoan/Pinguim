@@ -20,7 +20,7 @@
     //Botão menu
     
     
-    SKSpriteNode *botaoMenu = [SKSpriteNode spriteNodeWithImageNamed:@"botaoMenu"];
+    SKSpriteNode *botaoMenu = [SKSpriteNode spriteNodeWithImageNamed:@"menuBotao"];
     botaoMenu.position = CGPointMake(self.frame.size.width/2,self.frame.size.height / 3);
     botaoMenu.name = @"botaoMenuNode";//how the node is identified later
     botaoMenu.zPosition = 1.0;
@@ -29,7 +29,7 @@
     
     //Botão play again
     
-    SKSpriteNode* botaoReplay = [SKSpriteNode spriteNodeWithImageNamed:@"replaybutton"];
+    SKSpriteNode* botaoReplay = [SKSpriteNode spriteNodeWithImageNamed:@"replaybutton2"];
     botaoReplay.size = CGSizeMake(botaoMenu.size.height, botaoMenu.size.height);
     botaoReplay.position = CGPointMake(self.size.width - botaoReplay.size.width, self.frame.size.height - (botaoReplay.size.height));
     botaoReplay.name = @"botaoReplay";
@@ -105,21 +105,30 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
-    
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self];
-    SKNode *node = [self nodeAtPoint:location];
+    SKSpriteNode *node = (SKSpriteNode*)[self nodeAtPoint:location];
+    
+    //if fire button touched, bring the rain
+    if ([node.name isEqualToString:@"botaoMenuNode"]) {
+        node.texture = [SKTexture textureWithImageNamed:@"menuHighlight"];
+    }
+    //[self voltaJogo];
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInNode:self];
+    SKSpriteNode *node = (SKSpriteNode*)[self nodeAtPoint:location];
     
     //if fire button touched, bring the rain
     if ([node.name isEqualToString:@"botaoMenuNode"]) {
         [[ViewController sharedViewController]voltar];
     }
-    
-    
+
     if ([node.name isEqualToString:@"botaoReplay"]){
         [self voltaJogo];
     }
-    //[self voltaJogo];
 }
 
 -(void)startThread{
