@@ -15,6 +15,8 @@
 		712979BC1A1641260059FAA1 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712979BB1A1641260059FAA1 /* MessageUI.framework */; };
 		712979BE1A1641300059FAA1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712979BD1A1641300059FAA1 /* StoreKit.framework */; };
 		712979C01A16413C0059FAA1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712979BF1A16413C0059FAA1 /* SystemConfiguration.framework */; };
+		71C1514F1A1CC9C0000276B2 /* LLARingSpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C1514E1A1CC9C0000276B2 /* LLARingSpinnerView.m */; };
+		71C151511A1CF7C1000276B2 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71C151501A1CF7C1000276B2 /* iAd.framework */; };
 		910A85501A195DF6002C3647 /* Nuvem.m in Sources */ = {isa = PBXBuildFile; fileRef = 910A854F1A195DF6002C3647 /* Nuvem.m */; };
 		91102A6F19A8780F00596E7A /* menuBotao.png in Resources */ = {isa = PBXBuildFile; fileRef = 91102A6B19A8780F00596E7A /* menuBotao.png */; };
 		91102A7019A8780F00596E7A /* menuHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 91102A6C19A8780F00596E7A /* menuHighlight.png */; };
@@ -115,6 +117,9 @@
 		712979BB1A1641260059FAA1 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		712979BD1A1641300059FAA1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		712979BF1A16413C0059FAA1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		71C1514D1A1CC9C0000276B2 /* LLARingSpinnerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLARingSpinnerView.h; sourceTree = "<group>"; };
+		71C1514E1A1CC9C0000276B2 /* LLARingSpinnerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLARingSpinnerView.m; sourceTree = "<group>"; };
+		71C151501A1CF7C1000276B2 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		910A854E1A195DF6002C3647 /* Nuvem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Nuvem.h; sourceTree = "<group>"; };
 		910A854F1A195DF6002C3647 /* Nuvem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Nuvem.m; sourceTree = "<group>"; };
 		91102A6B19A8780F00596E7A /* menuBotao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuBotao.png; sourceTree = "<group>"; };
@@ -202,6 +207,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71C151511A1CF7C1000276B2 /* iAd.framework in Frameworks */,
 				712979BE1A1641300059FAA1 /* StoreKit.framework in Frameworks */,
 				712979C01A16413C0059FAA1 /* SystemConfiguration.framework in Frameworks */,
 				712979BC1A1641260059FAA1 /* MessageUI.framework in Frameworks */,
@@ -250,6 +256,15 @@
 				712979B41A1640B80059FAA1 /* README.txt */,
 			);
 			name = GoogleAds;
+			sourceTree = "<group>";
+		};
+		71C1514C1A1CC9C0000276B2 /* ENLLARingSpinner */ = {
+			isa = PBXGroup;
+			children = (
+				71C1514D1A1CC9C0000276B2 /* LLARingSpinnerView.h */,
+				71C1514E1A1CC9C0000276B2 /* LLARingSpinnerView.m */,
+			);
+			path = ENLLARingSpinner;
 			sourceTree = "<group>";
 		};
 		910A854D1A195DB8002C3647 /* WS */ = {
@@ -389,6 +404,7 @@
 		E69986D318D234690026878B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				71C151501A1CF7C1000276B2 /* iAd.framework */,
 				712979BF1A16413C0059FAA1 /* SystemConfiguration.framework */,
 				712979BD1A1641300059FAA1 /* StoreKit.framework */,
 				712979BB1A1641260059FAA1 /* MessageUI.framework */,
@@ -409,6 +425,7 @@
 		E69986DC18D234690026878B /* MiniChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				71C1514C1A1CC9C0000276B2 /* ENLLARingSpinner */,
 				712979A61A16409A0059FAA1 /* GoogleAds */,
 				91FD8F1219A5C0B800ED9B17 /* imagensVU */,
 				910A854D1A195DB8002C3647 /* WS */,
@@ -625,6 +642,7 @@
 				E69986E318D234690026878B /* main.m in Sources */,
 				91968A8E18DC2A9200076DD8 /* Reachability.m in Sources */,
 				91D1F59B18DBA14500F82100 /* Ranking.m in Sources */,
+				71C1514F1A1CC9C0000276B2 /* LLARingSpinnerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

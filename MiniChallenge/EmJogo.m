@@ -139,6 +139,7 @@
 
 
 -(void)start {
+    [[ViewController sharedViewController]iniciaBanner];
     [self removeAllChildren];
     self.score = 0.0;
     self.player.estado = PULANDO;
@@ -211,7 +212,9 @@
     // Create and configure the scene.
     SKScene * scene = [[Ranking alloc]initWithSize:self.view.bounds.size : self.nomeJogador : scoreValue];
     scene.scaleMode = SKSceneScaleModeAspectFill;
-    [[ViewController sharedViewController]showAd];
+    if (![[NSUserDefaults standardUserDefaults]boolForKey:@"areAdsRemoved"]) {
+        [[ViewController sharedViewController]showAd];
+    }
     // Present the scene.
     [[ViewController sharedViewController].skView presentScene:scene];
 }

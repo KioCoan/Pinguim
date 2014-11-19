@@ -13,14 +13,17 @@
 #import "WSwebservice.h"
 #import "GADInterstitial.h"
 #import "GADInterstitialDelegate.h"
+#import "LLARingSpinnerView.h"
+#import <iAd/iAd.h>
 
-@interface ViewController : UIViewController <UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate,GADInterstitialDelegate, UIActionSheetDelegate, SKProductsRequestDelegate, SKPaymentTransactionObserver>
+@interface ViewController : UIViewController <UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate,GADInterstitialDelegate, UIActionSheetDelegate, SKProductsRequestDelegate, SKPaymentTransactionObserver,ADBannerViewDelegate>
 
 @property GADInterstitial * ad;
 @property int partidasJogadas;
 @property BOOL adLiberado;
-
 @property BOOL areAdsRemoved;
+@property ADBannerView* iadBanner;
+@property BOOL bannerVisivel;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgPinguim;
 @property (weak, nonatomic) IBOutlet UILabel *lblRecord;
@@ -53,5 +56,7 @@
 -(void)desabilitaObjetos;
 -(void)showAd;
 - (IBAction)removerAds:(id)sender;
+
+-(void)iniciaBanner;
 
 @end

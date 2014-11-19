@@ -50,6 +50,7 @@
     token = [NSString stringWithFormat:@"%d",[self geraToken:score.intValue nome:nome]];
     //www.caiocoan.com/wsPepes/ranking.php
     post = [NSString stringWithFormat:@"nome=%@&score=%@&token=%@",nome,score,token];
+    post = [post stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSString* postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[post length]];
     NSMutableURLRequest* request = [[NSMutableURLRequest alloc]init];
@@ -58,7 +59,8 @@
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:postData];
-    //NSURLConnection* conn = [[NSURLConnection alloc]initWithRequest:request delegate:self];
+    NSURLConnection* conn = nil;
+    conn = [[NSURLConnection alloc]initWithRequest:request delegate:self];
     //conn ? NSLog(@"Postou") : NSLog(@"Nop");
 }
 
