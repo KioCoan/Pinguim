@@ -98,7 +98,12 @@
 {
     [UIView animateWithDuration:0.3 animations:^{
         CGRect f = self.view.frame;
-        f.origin.y = -35.0f;  //set the -35.0f to your required value
+        if ([[UIDevice currentDevice].systemVersion doubleValue] >= 8.0) {
+            f.origin.y = -35.0f;  //set the -35.0f to your required value
+        }else{
+            f.origin.x = -35;
+        }
+        
         self.view.frame = f;
     }];
 }
@@ -107,7 +112,12 @@
 {
     [UIView animateWithDuration:0.3 animations:^{
         CGRect f = self.view.frame;
-        f.origin.y = 0.0f;
+        if ([[UIDevice currentDevice].systemVersion doubleValue] >= 8.0) {
+            f.origin.y = 0.0f;
+        }else{
+            f.origin.x = 0.0f;
+        }
+        
         self.view.frame = f;
     }];
 }
@@ -212,7 +222,7 @@
 }
 
 -(void)constroeTabela{
-    _viewRanking = [[UIView alloc]initWithFrame:CGRectMake(self.view.bounds.size.width * 0.25, -self.view.frame.size.height * 0.95, self.view.frame.size.width * 0.5, self.view.frame.size.height * 0.95)];
+    _viewRanking = [[UIView alloc]initWithFrame:CGRectMake(self.view.bounds.size.width * 0.25, -self.view.bounds.size.height * 0.95, self.view.bounds.size.width * 0.5, self.view.bounds.size.height * 0.95)];
     
     _viewRanking.backgroundColor = [UIColor blackColor];
     [[self view]addSubview:_viewRanking];
