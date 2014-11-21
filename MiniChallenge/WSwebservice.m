@@ -22,6 +22,10 @@
     NSData* jsonDados = [[NSData alloc] initWithContentsOfURL:
                          [NSURL URLWithString:@"http://www.caiocoan.com/wsPepes/listarPlayers.php"]];
     NSError *error;
+    SBJson4Parser* parser = [[SBJson4Parser alloc]init];
+    [parser parse:jsonDados];
+    
+    
     NSMutableDictionary *jsonRanking = [NSJSONSerialization
                                         JSONObjectWithData:jsonDados
                                         options:NSJSONReadingMutableContainers
