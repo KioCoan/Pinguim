@@ -143,15 +143,19 @@
 }
 
 - (IBAction)iniciaGame:(UIButton *)sender {
-    [self desabilitaObjetos];
-    self.skView = (SKView *)self.view;
-    _skView.showsFPS = NO;
-    _skView.showsNodeCount = NO;
-    // Create and configure the scene.
-    SKScene * scene = [[EmJogo alloc]initWithSize:self.skView.bounds.size :self.txtNome.text ];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
-    // Present the scene.
-    [_skView presentScene:scene];
+    LLARingSpinnerView* spinner = [[LLARingSpinnerView alloc]initWithView:self.view];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.skView = (SKView *)self.view;
+        _skView.showsFPS = NO;
+        _skView.showsNodeCount = NO;
+        // Create and configure the scene.
+        SKScene * scene = [[EmJogo alloc]initWithSize:self.skView.bounds.size :self.txtNome.text ];
+        scene.scaleMode = SKSceneScaleModeAspectFill;
+        // Present the scene.
+        [_skView presentScene:scene transition:[SKTransition pushWithDirection:SKTransitionDirectionRight duration:1.0]];
+        [self desabilitaObjetos];
+        [spinner stopAnimating];
+    });
 }
 - (void)voltar
 {
