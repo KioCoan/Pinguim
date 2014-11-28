@@ -27,6 +27,8 @@
 @property BOOL querdaInicial;
 @property float score;
 @property SKLabelNode *lblScore;
+@property SKLabelNode *lblScoreCount;
+@property CGPoint lblScoreCOriginal;
 
 @property double timer;
 @property (nonatomic) NSTimeInterval lastUpdateTimeInterval;

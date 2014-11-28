@@ -93,10 +93,20 @@
     {
         if(self.player.estado == PULANDO && (!self.querdaInicial)){
             self.scoreCount += 0.028;
+            self.lblScoreCount.text = [NSString stringWithFormat:@"+%.2f",self.scoreCount];
         }
         if(self.player.estado == CORRENDO && (!self.querdaInicial)){
             self.score += self.scoreCount;
             self.scoreCount = 0;
+            SKLabelNode* animacaoNode = [self.lblScoreCount copy];
+            [self addChild:animacaoNode];
+            self.lblScoreCount.text = @"";
+            SKAction* moverLbl = [SKAction moveBy:CGVectorMake(0.0, +40.0) duration:0.8];
+            SKAction* fadeLbl = [SKAction fadeAlphaTo:0 duration:1];
+            SKAction* group = [SKAction group:@[moverLbl,fadeLbl]];
+            [animacaoNode runAction:group completion:^{
+                [animacaoNode removeFromParent];
+            }];
         }
         if(self.player.estado == CORRENDO){
             self.querdaInicial = NO;
@@ -151,8 +161,15 @@
     self.lblScore.fontName = @"Helvetica Neue";
     self.lblScore.zPosition = 150;
     self.lblScore.fontSize = 32;
-    //self.lblScore.fontName = @"Helvetica Neue";
     [self addChild:self.lblScore];
+    self.lblScoreCount = [[SKLabelNode alloc]init];
+    self.lblScoreCount.position = CGPointMake(_lblScore.position.x, _lblScore.position.y - 30);
+    self.lblScoreCount.text = [NSString string];
+    self.lblScoreCount.fontSize = 22;
+    self.lblScoreCount.fontColor = [UIColor colorWithRed:0.2 green:0.8 blue:0.2 alpha:1];
+    self.lblScoreCount.zPosition = 149;
+    self.lblScoreCount.fontName = @"Helvetica Neue";
+    [self addChild:self.lblScoreCount];
     //Botão de mutar
     [self geraBotaoVolume];
     //Background
