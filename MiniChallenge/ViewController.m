@@ -314,11 +314,15 @@
 
 - (void)interstitialDidReceiveAd:(GADInterstitial *)interstitial{
     _adLiberado = YES;
+#if DEBUG
     NSLog(@"recebeu ad FS");
+#endif
 }
 
 -(void)interstitial:(GADInterstitial *)ad didFailToReceiveAdWithError:(GADRequestError *)error{
+#if DEBUG
     NSLog(@"deu pau no ad FS: %@",error);
+#endif
     _adLiberado = NO;
 }
 
@@ -329,7 +333,9 @@
     request.testDevices = [NSArray arrayWithObjects:GAD_SIMULATOR_ID, nil];
     [_ad loadRequest:request];
     _ad.delegate = self;
+#if DEBUG
     NSLog(@"Reload no request do ad full screen");
+#endif
 }
 
 -(void)showAd{
@@ -337,7 +343,9 @@
         if(_partidasJogadas == 3){
             _partidasJogadas = 0;
             [_ad presentFromRootViewController:self];
+#if DEBUG
             NSLog(@"Full Screen ad show");
+#endif
         }else{
             _partidasJogadas++;
         }
@@ -486,7 +494,9 @@
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"areAdsRemoved"] && ![ViewController sharedViewController].bannerVisivel) {
         _iadBanner = [[ADBannerView alloc]initWithFrame:CGRectMake(self.view.bounds.size.width * 0.20, -50, 320, 50)];
         _iadBanner.delegate = self;
+#if DEBUG
         NSLog(@"ADBannerView allocada");
+#endif
     }
 }
 
@@ -498,13 +508,17 @@
             banner.frame = CGRectOffset(banner.frame, 0, 50);
             [UIView commitAnimations];
             _bannerVisivel = YES;
+#if DEBUG
             NSLog(@"Desceu banner animado");
+#endif
         }
     }
 }
 
 -(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error{
+#if DEBUG
     NSLog(@"Banner não carregou: %@",error);
+#endif
 }
 
 -(void)escondeBanner{
@@ -520,9 +534,19 @@
             }
             _bannerVisivel = NO;
             _iadBanner = nil;
+#if DEBUG
             NSLog(@"Subiu banner animado");
+#endif
         }
     }
 }
 
+-(BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave{
+    _skView.scene.view.paused = YES;
+    return YES;
+}
+
+-(void)bannerViewActionDidFinish:(ADBannerView *)banner{
+    _skView.scene.view.paused = NO;
+}
 @end
