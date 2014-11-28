@@ -51,7 +51,12 @@
     _adLiberado = NO;
     
     _areAdsRemoved = [[NSUserDefaults standardUserDefaults]boolForKey:@"areAdsRemoved"];
-
+#if DEBUG
+    if(_areAdsRemoved)
+        NSLog(@"Ads estão removidos");
+#endif
+    
+    
     //adstuff
     if (!_areAdsRemoved) {
         _ad = [[GADInterstitial alloc]init];
@@ -381,9 +386,10 @@
                 case 1:
                     //NSLog(@"Restore");
                     request.delegate = self;
-                    [request start];
-
-                    [spinner startAnimating];
+                    if ([SKPaymentQueue canMakePayments]) {
+                        [request start];
+                        [spinner startAnimating];
+                    }
                     break;
                 default:
                     _btnRemoveAds.enabled = YES;
@@ -438,7 +444,7 @@
 }
 
 -(void)paymentQueue:(SKPaymentQueue *)queue restoreCompletedTransactionsFailedWithError:(NSError *)error{
-    //NSLog(@"%@",error);
+    NSLog(@"%@",error);
 }
 
 - (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions{

@@ -149,7 +149,12 @@
 
 
 -(void)start {
-    [[ViewController sharedViewController]iniciaBanner];
+    if (![ViewController sharedViewController].areAdsRemoved) {
+        [[ViewController sharedViewController]iniciaBanner];
+#if DEBUG
+        NSLog(@"Ads do banner ativo");
+#endif
+    }
     [self removeAllChildren];
     self.score = 0.0;
     self.player.estado = PULANDO;
